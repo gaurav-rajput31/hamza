@@ -1,0 +1,1628 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Products</title>
+
+<!-- Tailwind CSS -->
+<script src="https://cdn.tailwindcss.com"></script>
+
+<!-- AOS Animation -->
+<link href="https://unpkg.com/aos@2.3.4/dist/aos.css" rel="stylesheet">
+
+<!-- Boxicons -->
+<link href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css" rel="stylesheet">
+
+
+</head>
+<body class="bg-gray-50">
+
+<!-- PAGE HEADER -->
+  <header class="fixed top-0  left-0 w-full z-50">
+
+ 
+<div class="max-w-7xl mx-auto px-6 pt-4">
+
+    <nav class="bg-slate-950/70 backdrop-blur-2xl border border-white/10 rounded-2xl px-6 py-4">
+
+        <div class="flex items-center justify-between">
+
+            <!-- Logo -->
+
+            <a href="#" class="flex items-center gap-3">
+
+                <div
+                    class="w-12 h-12 rounded-xl bg-gradient-to-br from-amber-400 to-orange-500 flex items-center justify-center">
+
+                    🚚
+
+                </div>
+
+                <div>
+
+                    <h2 class="text-xl font-black text-white">
+                        HAMZA
+                    </h2>
+
+                    <span class="text-xs text-slate-400">
+                        Food Cart India
+                    </span>
+
+                </div>
+
+            </a>
+
+            <!-- Desktop Menu -->
+
+            <ul class="hidden lg:flex items-center gap-8">
+
+                <li>
+                    <a href="/index.html" class="text-white hover:text-amber-400 transition">
+                        Home
+                    </a>
+                </li>
+
+                <!-- Dropdown -->
+
+                <li class="relative group">
+
+                    <a href="/products.html"
+                        class="text-white hover:text-amber-400 transition">
+
+                        Products
+
+                        ▼
+
+                    </a>
+
+                    <div
+                        class="absolute top-full left-0 mt-4 w-72 bg-slate-900 border border-white/10 rounded-2xl p-4 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition">
+
+                        <a href="/product.html" class="block p-3 rounded-xl hover:bg-white/5 text-white hover:text-amber-400 transition">
+                            🚚 Food Carts
+                        </a>
+
+                        <a href="/product.html" class="block p-3 rounded-xl hover:bg-white/5 text-white hover:text-amber-400 transition">
+                            ☕ Tea Carts
+                        </a>
+
+                        <a href="/product.html" class="block p-3 rounded-xl hover:bg-white/5 text-white hover:text-amber-400 transition">
+                            🍔 Fast Food Carts
+                        </a>
+
+                        <a href="/product.html" class="block p-3 rounded-xl hover:bg-white/5 text-white hover:text-amber-400 transition">
+                            🚐 Food Trucks
+                        </a>
+
+                    </div>
+
+                </li>
+
+                <li><a href="/gallery.html" class="text-white hover:text-amber-400 transition">Gallery</a></li>
+
+                <li><a href="/about.html" class="text-white hover:text-amber-400 transition">About</a></li>
+
+                <li><a href="/contact.html" class="text-white hover:text-amber-400 transition">Contact</a></li>
+
+            </ul>
+
+            <!-- Right Buttons -->
+
+            <div class="hidden lg:flex items-center gap-3">
+
+                 <a href="#"
+                    class="px-5 py-3 text-white rounded-xl bg-white/5 border border-white/10">
+
+                    📞 Call Now
+
+                </a>
+
+                <a href="#"
+                    class="px-6 py-3 rounded-xl bg-amber-500  text-white font-bold">
+
+                    Get Quote
+
+                </a>
+
+            </div>
+            <!-- Mobile Toggle -->
+
+            <button id="menuBtn"
+                class="lg:hidden text-3xl">
+
+                ☰
+
+            </button>
+
+        </div>
+
+    </nav>
+
+</div>
+ 
+
+</header>
+
+<!-- MOBILE MENU -->
+
+<div id="mobileMenu"
+    class="fixed top-0 right-[-100%] w-[320px] h-full bg-slate-950 z-[999] transition-all duration-500">
+
+ 
+<div class="p-8">
+
+    <div class="flex justify-between items-center mb-10">
+
+        <h3 class="text-2xl font-bold">
+            Menu
+        </h3>
+
+        <button id="closeMenu">
+            ✕
+        </button>
+
+    </div>
+
+    <div class="space-y-6">
+
+        <a href="/index.html" class="block">
+            Home
+        </a>
+
+        <a href="/products.html" class="block">
+            Products
+        </a>
+
+        <a href="/gallery.html" class="block">
+            Gallery
+        </a>
+
+        <a href="/about.html" class="block">
+            About
+        </a>
+
+        
+
+        <a href="/contact.html" class="block">
+            Contact
+        </a>
+
+    </div>
+
+    <a href="/contact.html"
+        class="block text-center mt-10 py-4 rounded-xl bg-amber-500  text-white font-bold">
+
+        Get Quote
+
+    </a>
+
+</div>
+ 
+
+</div>
+
+<script>
+
+const menuBtn =
+document.getElementById("menuBtn");
+
+const mobileMenu =
+document.getElementById("mobileMenu");
+
+const closeMenu =
+document.getElementById("closeMenu");
+
+menuBtn.onclick = () => {
+
+mobileMenu.style.right = "0";
+
+}
+
+closeMenu.onclick = () => {
+
+mobileMenu.style.right = "-100%";
+
+}
+
+</script>
+
+<!-- PRODUCTS HERO -->
+
+<section class="relative pt-44 pb-28 overflow-hidden bg-[#020617]">
+
+
+<!-- Glow -->
+
+<div class="absolute top-0 left-0 w-[500px] h-[500px] bg-amber-500/10 blur-[180px] rounded-full"></div>
+
+<div class="absolute bottom-0 right-0 w-[500px] h-[500px] bg-orange-500/10 blur-[180px] rounded-full"></div>
+
+<div class="max-w-7xl mx-auto px-6 relative z-10">
+
+    <div class="text-center">
+
+        <span
+            class="inline-flex items-center gap-2 px-5 py-2 rounded-full bg-amber-500/10 border border-amber-500/20 text-amber-400">
+
+            🚚 500+ Custom Designs Available
+
+        </span>
+
+        <h1
+            class="text-5xl md:text-7xl lg:text-8xl font-black text-white mt-8 leading-tight">
+
+            Explore Our
+
+            <span class="text-amber-400">
+                Premium Food Cart
+            </span>
+
+            Collection
+
+        </h1>
+
+      
+
+    </div>
+
+   
+
+   
+
+    </div>
+
+</div>
+
+
+</section>
+
+
+
+<!-- PRODUCT FILTER -->
+
+<section class="py-12 bg-[#020617] border-t border-white/5">
+
+```
+<div class="max-w-7xl mx-auto px-6">
+
+    <div
+        class="bg-[#0F172A] border border-white/10 rounded-[30px] p-6">
+
+        <div
+            class="flex flex-col lg:flex-row gap-6 items-center justify-between">
+
+            <!-- Search -->
+
+            <div class="relative w-full lg:w-[400px]">
+
+                <input
+                    type="text"
+                    placeholder="Search products..."
+                    class="w-full bg-[#020617] border border-white/10 rounded-2xl py-4 pl-14 pr-4 text-white placeholder:text-slate-500 focus:outline-none focus:border-amber-500">
+
+                <i
+                    class='bx bx-search absolute left-5 top-1/2 -translate-y-1/2 text-xl text-slate-500'></i>
+
+            </div>
+
+            <!-- Categories -->
+
+            <div
+                class="flex flex-wrap justify-center gap-3">
+
+                <button
+                    class="px-5 py-3 rounded-full bg-amber-500  text-white font-semibold">
+
+                    All Products
+
+                </button>
+
+                <button
+                    class="px-5 py-3 rounded-full text-white bg-white/5 border border-white/10 hover:border-amber-500 transition">
+
+                    ☕ Tea Cart
+
+                </button>
+
+                <button
+                    class="px-5 py-3 rounded-full text-white bg-white/5 border border-white/10 hover:border-amber-500 transition">
+
+                    🍔 Fast Food
+
+                </button>
+
+                <button
+                    class="px-5 py-3 rounded-full text-white bg-white/5 border border-white/10 hover:border-amber-500 transition">
+
+                    🥤 Juice Cart
+
+                </button>
+
+                <button
+                    class="px-5 py-3 rounded-full text-white bg-white/5 border border-white/10 hover:border-amber-500 transition">
+
+                    🍦 Ice Cream
+
+                </button>
+
+                <button
+                    class="px-5 py-3 rounded-full text-white bg-white/5 border border-white/10 hover:border-amber-500 transition">
+
+                    🚚 Food Truck
+
+                </button>
+
+                <button
+                    class="px-5 py-3 rounded-full text-white bg-white/5 border border-white/10 hover:border-amber-500 transition">
+
+                    🏪 Kiosk
+
+                </button>
+
+            </div>
+
+        </div>
+
+        <!-- Result Count -->
+
+        <div
+            class="flex justify-between items-center mt-8 pt-6 border-t border-white/10">
+
+            <p class="text-slate-400">
+                Showing
+                <span class="text-white font-semibold">
+                    12 Products
+                </span>
+            </p>
+
+            <select
+                class="bg-[#020617] border border-white/10 rounded-xl px-4 py-3 text-white">
+
+                <option>Latest</option>
+                <option>Price Low to High</option>
+                <option>Price High to Low</option>
+
+            </select>
+
+        </div>
+
+    </div>
+
+</div>
+```
+
+</section>
+
+<!-- ALL PRODUCTS -->
+
+<section class="py-24 bg-[#020617]">
+
+```
+<div class="max-w-7xl mx-auto px-6">
+
+    <div class="grid md:grid-cols-2 xl:grid-cols-3 gap-8">
+
+        <!-- Product Card -->
+
+        <div class="group bg-[#0F172A] border border-white/10 rounded-[32px] overflow-hidden hover:border-amber-500/40 transition-all duration-500">
+
+            <div class="relative overflow-hidden">
+
+                <span class="absolute top-4 left-4 z-10 px-3 py-1 rounded-full bg-amber-500 text-white text-sm font-bold">
+                    Best Seller
+                </span>
+
+                <img src="/cart.jpg"
+                    class="w-full h-72 object-cover group-hover:scale-110 duration-700">
+
+            </div>
+
+            <div class="p-7">
+
+                <span class="text-amber-400 text-sm">
+                    Tea & Coffee Cart
+                </span>
+
+                <h3 class="text-3xl font-bold text-white mt-3">
+                    Premium Tea Cart
+                </h3>
+
+                <p class="text-slate-400 mt-4">
+                    Modern tea cart with stainless steel body and branding panel.
+                </p>
+
+                <div class="flex flex-wrap gap-2 mt-5">
+
+                    <span class="px-3 py-1 bg-white/5 text-white rounded-full text-sm">
+                        Stainless Steel
+                    </span>
+
+                    <span class="px-3 py-1 bg-white/5 text-white rounded-full text-sm">
+                        Waterproof
+                    </span>
+
+                </div>
+
+                <div class="flex items-center justify-between mt-6">
+
+                    <h4 class="text-3xl font-black text-white">
+                        ₹49,999
+                    </h4>
+
+                    <span class="text-green-400">
+                        In Stock
+                    </span>
+
+                </div>
+
+                <div class="grid grid-cols-2 gap-3 mt-6">
+
+                    <a href="/product.html"
+                        class="py-3 rounded-xl bg-amber-500 text-white text-center font-bold">
+
+                        Details
+
+                    </a>
+
+                    <a href="https://wa.me/919999999999"
+                        class="py-3 rounded-xl bg-green-500 text-white text-center font-bold">
+
+                        WhatsApp
+
+                    </a>
+
+                </div>
+
+            </div>
+
+        </div>
+
+        
+        <!-- Product Card -->
+
+        <div class="group bg-[#0F172A] border border-white/10 rounded-[32px] overflow-hidden hover:border-amber-500/40 transition-all duration-500">
+
+            <div class="relative overflow-hidden">
+
+                <span class="absolute top-4 left-4 z-10 px-3 py-1 rounded-full bg-amber-500 text-white text-sm font-bold">
+                    Best Seller
+                </span>
+
+                <img src="/cart.jpg"
+                    class="w-full h-72 object-cover group-hover:scale-110 duration-700">
+
+            </div>
+
+            <div class="p-7">
+
+                <span class="text-amber-400 text-sm">
+                    Tea & Coffee Cart
+                </span>
+
+                <h3 class="text-3xl font-bold text-white mt-3">
+                    Premium Tea Cart
+                </h3>
+
+                <p class="text-slate-400 mt-4">
+                    Modern tea cart with stainless steel body and branding panel.
+                </p>
+
+                <div class="flex flex-wrap gap-2 mt-5">
+
+                    <span class="px-3 py-1 bg-white/5 text-white rounded-full text-sm">
+                        Stainless Steel
+                    </span>
+
+                    <span class="px-3 py-1 bg-white/5 text-white rounded-full text-sm">
+                        Waterproof
+                    </span>
+
+                </div>
+
+                <div class="flex items-center justify-between mt-6">
+
+                    <h4 class="text-3xl font-black text-white">
+                        ₹49,999
+                    </h4>
+
+                    <span class="text-green-400">
+                        In Stock
+                    </span>
+
+                </div>
+
+                <div class="grid grid-cols-2 gap-3 mt-6">
+
+                    <a href="/product.html"
+                        class="py-3 rounded-xl bg-amber-500 text-white text-center font-bold">
+
+                        Details
+
+                    </a>
+
+                    <a href="https://wa.me/919999999999"
+                        class="py-3 rounded-xl bg-green-500 text-white text-center font-bold">
+
+                        WhatsApp
+
+                    </a>
+
+                </div>
+
+            </div>
+
+        </div>
+
+
+
+        
+        <!-- Product Card -->
+
+        <div class="group bg-[#0F172A] border border-white/10 rounded-[32px] overflow-hidden hover:border-amber-500/40 transition-all duration-500">
+
+            <div class="relative overflow-hidden">
+
+                <span class="absolute top-4 left-4 z-10 px-3 py-1 rounded-full bg-amber-500 text-white text-sm font-bold">
+                    Best Seller
+                </span>
+
+                <img src="/cart.jpg"
+                    class="w-full h-72 object-cover group-hover:scale-110 duration-700">
+
+            </div>
+
+            <div class="p-7">
+
+                <span class="text-amber-400 text-sm">
+                    Tea & Coffee Cart
+                </span>
+
+                <h3 class="text-3xl font-bold text-white mt-3">
+                    Premium Tea Cart
+                </h3>
+
+                <p class="text-slate-400 mt-4">
+                    Modern tea cart with stainless steel body and branding panel.
+                </p>
+
+                <div class="flex flex-wrap gap-2 mt-5">
+
+                    <span class="px-3 py-1 bg-white/5 text-white rounded-full text-sm">
+                        Stainless Steel
+                    </span>
+
+                    <span class="px-3 py-1 bg-white/5 text-white rounded-full text-sm">
+                        Waterproof
+                    </span>
+
+                </div>
+
+                <div class="flex items-center justify-between mt-6">
+
+                    <h4 class="text-3xl font-black text-white">
+                        ₹49,999
+                    </h4>
+
+                    <span class="text-green-400">
+                        In Stock
+                    </span>
+
+                </div>
+
+                <div class="grid grid-cols-2 gap-3 mt-6">
+
+                    <a href="/product.html"
+                        class="py-3 rounded-xl bg-amber-500 text-white text-center font-bold">
+
+                        Details
+
+                    </a>
+
+                    <a href="https://wa.me/919999999999"
+                        class="py-3 rounded-xl bg-green-500 text-white text-center font-bold">
+
+                        WhatsApp
+
+                    </a>
+
+                </div>
+
+            </div>
+
+        </div>
+
+
+
+
+        
+        <!-- Product Card -->
+
+        <div class="group bg-[#0F172A] border border-white/10 rounded-[32px] overflow-hidden hover:border-amber-500/40 transition-all duration-500">
+
+            <div class="relative overflow-hidden">
+
+                <span class="absolute top-4 left-4 z-10 px-3 py-1 rounded-full bg-amber-500 text-white text-sm font-bold">
+                    Best Seller
+                </span>
+
+                <img src="/cart.jpg"
+                    class="w-full h-72 object-cover group-hover:scale-110 duration-700">
+
+            </div>
+
+            <div class="p-7">
+
+                <span class="text-amber-400 text-sm">
+                    Tea & Coffee Cart
+                </span>
+
+                <h3 class="text-3xl font-bold text-white mt-3">
+                    Premium Tea Cart
+                </h3>
+
+                <p class="text-slate-400 mt-4">
+                    Modern tea cart with stainless steel body and branding panel.
+                </p>
+
+                <div class="flex flex-wrap gap-2 mt-5">
+
+                    <span class="px-3 py-1 bg-white/5 text-white rounded-full text-sm">
+                        Stainless Steel
+                    </span>
+
+                    <span class="px-3 py-1 bg-white/5 text-white rounded-full text-sm">
+                        Waterproof
+                    </span>
+
+                </div>
+
+                <div class="flex items-center justify-between mt-6">
+
+                    <h4 class="text-3xl font-black text-white">
+                        ₹49,999
+                    </h4>
+
+                    <span class="text-green-400">
+                        In Stock
+                    </span>
+
+                </div>
+
+                <div class="grid grid-cols-2 gap-3 mt-6">
+
+                    <a href="/product.html"
+                        class="py-3 rounded-xl bg-amber-500 text-white text-center font-bold">
+
+                        Details
+
+                    </a>
+
+                    <a href="https://wa.me/919999999999"
+                        class="py-3 rounded-xl bg-green-500 text-white text-center font-bold">
+
+                        WhatsApp
+
+                    </a>
+
+                </div>
+
+            </div>
+
+        </div>
+
+
+
+
+        
+        <!-- Product Card -->
+
+        <div class="group bg-[#0F172A] border border-white/10 rounded-[32px] overflow-hidden hover:border-amber-500/40 transition-all duration-500">
+
+            <div class="relative overflow-hidden">
+
+                <span class="absolute top-4 left-4 z-10 px-3 py-1 rounded-full bg-amber-500 text-white text-sm font-bold">
+                    Best Seller
+                </span>
+
+                <img src="/cart.jpg"
+                    class="w-full h-72 object-cover group-hover:scale-110 duration-700">
+
+            </div>
+
+            <div class="p-7">
+
+                <span class="text-amber-400 text-sm">
+                    Tea & Coffee Cart
+                </span>
+
+                <h3 class="text-3xl font-bold text-white mt-3">
+                    Premium Tea Cart
+                </h3>
+
+                <p class="text-slate-400 mt-4">
+                    Modern tea cart with stainless steel body and branding panel.
+                </p>
+
+                <div class="flex flex-wrap gap-2 mt-5">
+
+                    <span class="px-3 py-1 bg-white/5 text-white rounded-full text-sm">
+                        Stainless Steel
+                    </span>
+
+                    <span class="px-3 py-1 bg-white/5 text-white rounded-full text-sm">
+                        Waterproof
+                    </span>
+
+                </div>
+
+                <div class="flex items-center justify-between mt-6">
+
+                    <h4 class="text-3xl font-black text-white">
+                        ₹49,999
+                    </h4>
+
+                    <span class="text-green-400">
+                        In Stock
+                    </span>
+
+                </div>
+
+                <div class="grid grid-cols-2 gap-3 mt-6">
+
+                    <a href="/product.html"
+                        class="py-3 rounded-xl bg-amber-500 text-white text-center font-bold">
+
+                        Details
+
+                    </a>
+
+                    <a href="https://wa.me/919999999999"
+                        class="py-3 rounded-xl bg-green-500 text-white text-center font-bold">
+
+                        WhatsApp
+
+                    </a>
+
+                </div>
+
+            </div>
+
+        </div>
+
+
+
+
+        
+        <!-- Product Card -->
+
+        <div class="group bg-[#0F172A] border border-white/10 rounded-[32px] overflow-hidden hover:border-amber-500/40 transition-all duration-500">
+
+            <div class="relative overflow-hidden">
+
+                <span class="absolute top-4 left-4 z-10 px-3 py-1 rounded-full bg-amber-500 text-white text-sm font-bold">
+                    Best Seller
+                </span>
+
+                <img src="/cart.jpg"
+                    class="w-full h-72 object-cover group-hover:scale-110 duration-700">
+
+            </div>
+
+            <div class="p-7">
+
+                <span class="text-amber-400 text-sm">
+                    Tea & Coffee Cart
+                </span>
+
+                <h3 class="text-3xl font-bold text-white mt-3">
+                    Premium Tea Cart
+                </h3>
+
+                <p class="text-slate-400 mt-4">
+                    Modern tea cart with stainless steel body and branding panel.
+                </p>
+
+                <div class="flex flex-wrap gap-2 mt-5">
+
+                    <span class="px-3 py-1 bg-white/5 text-white rounded-full text-sm">
+                        Stainless Steel
+                    </span>
+
+                    <span class="px-3 py-1 bg-white/5 text-white rounded-full text-sm">
+                        Waterproof
+                    </span>
+
+                </div>
+
+                <div class="flex items-center justify-between mt-6">
+
+                    <h4 class="text-3xl font-black text-white">
+                        ₹49,999
+                    </h4>
+
+                    <span class="text-green-400">
+                        In Stock
+                    </span>
+
+                </div>
+
+                <div class="grid grid-cols-2 gap-3 mt-6">
+
+                    <a href="/product.html"
+                        class="py-3 rounded-xl bg-amber-500 text-white text-center font-bold">
+
+                        Details
+
+                    </a>
+
+                    <a href="https://wa.me/919999999999"
+                        class="py-3 rounded-xl bg-green-500 text-white text-center font-bold">
+
+                        WhatsApp
+
+                    </a>
+
+                </div>
+
+            </div>
+
+        </div>
+
+
+
+        
+        <!-- Product Card -->
+
+        <div class="group bg-[#0F172A] border border-white/10 rounded-[32px] overflow-hidden hover:border-amber-500/40 transition-all duration-500">
+
+            <div class="relative overflow-hidden">
+
+                <span class="absolute top-4 left-4 z-10 px-3 py-1 rounded-full bg-amber-500 text-white text-sm font-bold">
+                    Best Seller
+                </span>
+
+                <img src="/cart.jpg"
+                    class="w-full h-72 object-cover group-hover:scale-110 duration-700">
+
+            </div>
+
+            <div class="p-7">
+
+                <span class="text-amber-400 text-sm">
+                    Tea & Coffee Cart
+                </span>
+
+                <h3 class="text-3xl font-bold text-white mt-3">
+                    Premium Tea Cart
+                </h3>
+
+                <p class="text-slate-400 mt-4">
+                    Modern tea cart with stainless steel body and branding panel.
+                </p>
+
+                <div class="flex flex-wrap gap-2 mt-5">
+
+                    <span class="px-3 py-1 bg-white/5 text-white rounded-full text-sm">
+                        Stainless Steel
+                    </span>
+
+                    <span class="px-3 py-1 bg-white/5 text-white rounded-full text-sm">
+                        Waterproof
+                    </span>
+
+                </div>
+
+                <div class="flex items-center justify-between mt-6">
+
+                    <h4 class="text-3xl font-black text-white">
+                        ₹49,999
+                    </h4>
+
+                    <span class="text-green-400">
+                        In Stock
+                    </span>
+
+                </div>
+
+                <div class="grid grid-cols-2 gap-3 mt-6">
+
+                    <a href="/product.html"
+                        class="py-3 rounded-xl bg-amber-500 text-white text-center font-bold">
+
+                        Details
+
+                    </a>
+
+                    <a href="https://wa.me/919999999999"
+                        class="py-3 rounded-xl bg-green-500 text-white text-center font-bold">
+
+                        WhatsApp
+
+                    </a>
+
+                </div>
+
+            </div>
+
+        </div>
+
+
+
+        
+        <!-- Product Card -->
+
+        <div class="group bg-[#0F172A] border border-white/10 rounded-[32px] overflow-hidden hover:border-amber-500/40 transition-all duration-500">
+
+            <div class="relative overflow-hidden">
+
+                <span class="absolute top-4 left-4 z-10 px-3 py-1 rounded-full bg-amber-500 text-white text-sm font-bold">
+                    Best Seller
+                </span>
+
+                <img src="/cart.jpg"
+                    class="w-full h-72 object-cover group-hover:scale-110 duration-700">
+
+            </div>
+
+            <div class="p-7">
+
+                <span class="text-amber-400 text-sm">
+                    Tea & Coffee Cart
+                </span>
+
+                <h3 class="text-3xl font-bold text-white mt-3">
+                    Premium Tea Cart
+                </h3>
+
+                <p class="text-slate-400 mt-4">
+                    Modern tea cart with stainless steel body and branding panel.
+                </p>
+
+                <div class="flex flex-wrap gap-2 mt-5">
+
+                    <span class="px-3 py-1 bg-white/5 text-white rounded-full text-sm">
+                        Stainless Steel
+                    </span>
+
+                    <span class="px-3 py-1 bg-white/5 text-white rounded-full text-sm">
+                        Waterproof
+                    </span>
+
+                </div>
+
+                <div class="flex items-center justify-between mt-6">
+
+                    <h4 class="text-3xl font-black text-white">
+                        ₹49,999
+                    </h4>
+
+                    <span class="text-green-400">
+                        In Stock
+                    </span>
+
+                </div>
+
+                <div class="grid grid-cols-2 gap-3 mt-6">
+
+                    <a href="/product.html"
+                        class="py-3 rounded-xl bg-amber-500 text-white text-center font-bold">
+
+                        Details
+
+                    </a>
+
+                    <a href="https://wa.me/919999999999"
+                        class="py-3 rounded-xl bg-green-500 text-white text-center font-bold">
+
+                        WhatsApp
+
+                    </a>
+
+                </div>
+
+            </div>
+
+        </div>
+
+
+        
+        <!-- Product Card -->
+
+        <div class="group bg-[#0F172A] border border-white/10 rounded-[32px] overflow-hidden hover:border-amber-500/40 transition-all duration-500">
+
+            <div class="relative overflow-hidden">
+
+                <span class="absolute top-4 left-4 z-10 px-3 py-1 rounded-full bg-amber-500 text-white text-sm font-bold">
+                    Best Seller
+                </span>
+
+                <img src="/cart.jpg"
+                    class="w-full h-72 object-cover group-hover:scale-110 duration-700">
+
+            </div>
+
+            <div class="p-7">
+
+                <span class="text-amber-400 text-sm">
+                    Tea & Coffee Cart
+                </span>
+
+                <h3 class="text-3xl font-bold text-white mt-3">
+                    Premium Tea Cart
+                </h3>
+
+                <p class="text-slate-400 mt-4">
+                    Modern tea cart with stainless steel body and branding panel.
+                </p>
+
+                <div class="flex flex-wrap gap-2 mt-5">
+
+                    <span class="px-3 py-1 bg-white/5 text-white rounded-full text-sm">
+                        Stainless Steel
+                    </span>
+
+                    <span class="px-3 py-1 bg-white/5 text-white rounded-full text-sm">
+                        Waterproof
+                    </span>
+
+                </div>
+
+                <div class="flex items-center justify-between mt-6">
+
+                    <h4 class="text-3xl font-black text-white">
+                        ₹49,999
+                    </h4>
+
+                    <span class="text-green-400">
+                        In Stock
+                    </span>
+
+                </div>
+
+                <div class="grid grid-cols-2 gap-3 mt-6">
+
+                    <a href="/product.html"
+                        class="py-3 rounded-xl bg-amber-500 text-white text-center font-bold">
+
+                        Details
+
+                    </a>
+
+                    <a href="https://wa.me/919999999999"
+                        class="py-3 rounded-xl bg-green-500 text-white text-center font-bold">
+
+                        WhatsApp
+
+                    </a>
+
+                </div>
+
+            </div>
+
+        </div>
+
+        
+        <!-- Product Card -->
+
+        <div class="group bg-[#0F172A] border border-white/10 rounded-[32px] overflow-hidden hover:border-amber-500/40 transition-all duration-500">
+
+            <div class="relative overflow-hidden">
+
+                <span class="absolute top-4 left-4 z-10 px-3 py-1 rounded-full bg-amber-500 text-white text-sm font-bold">
+                    Best Seller
+                </span>
+
+                <img src="/cart.jpg"
+                    class="w-full h-72 object-cover group-hover:scale-110 duration-700">
+
+            </div>
+
+            <div class="p-7">
+
+                <span class="text-amber-400 text-sm">
+                    Tea & Coffee Cart
+                </span>
+
+                <h3 class="text-3xl font-bold text-white mt-3">
+                    Premium Tea Cart
+                </h3>
+
+                <p class="text-slate-400 mt-4">
+                    Modern tea cart with stainless steel body and branding panel.
+                </p>
+
+                <div class="flex flex-wrap gap-2 mt-5">
+
+                    <span class="px-3 py-1 bg-white/5 text-white rounded-full text-sm">
+                        Stainless Steel
+                    </span>
+
+                    <span class="px-3 py-1 bg-white/5 text-white rounded-full text-sm">
+                        Waterproof
+                    </span>
+
+                </div>
+
+                <div class="flex items-center justify-between mt-6">
+
+                    <h4 class="text-3xl font-black text-white">
+                        ₹49,999
+                    </h4>
+
+                    <span class="text-green-400">
+                        In Stock
+                    </span>
+
+                </div>
+
+                <div class="grid grid-cols-2 gap-3 mt-6">
+
+                    <a href="/product.html"
+                        class="py-3 rounded-xl bg-amber-500 text-white text-center font-bold">
+
+                        Details
+
+                    </a>
+
+                    <a href="https://wa.me/919999999999"
+                        class="py-3 rounded-xl bg-green-500 text-white text-center font-bold">
+
+                        WhatsApp
+
+                    </a>
+
+                </div>
+
+            </div>
+
+        </div>
+
+
+
+        
+        <!-- Product Card -->
+
+        <div class="group bg-[#0F172A] border border-white/10 rounded-[32px] overflow-hidden hover:border-amber-500/40 transition-all duration-500">
+
+            <div class="relative overflow-hidden">
+
+                <span class="absolute top-4 left-4 z-10 px-3 py-1 rounded-full bg-amber-500 text-white text-sm font-bold">
+                    Best Seller
+                </span>
+
+                <img src="/cart.jpg"
+                    class="w-full h-72 object-cover group-hover:scale-110 duration-700">
+
+            </div>
+
+            <div class="p-7">
+
+                <span class="text-amber-400 text-sm">
+                    Tea & Coffee Cart
+                </span>
+
+                <h3 class="text-3xl font-bold text-white mt-3">
+                    Premium Tea Cart
+                </h3>
+
+                <p class="text-slate-400 mt-4">
+                    Modern tea cart with stainless steel body and branding panel.
+                </p>
+
+                <div class="flex flex-wrap gap-2 mt-5">
+
+                    <span class="px-3 py-1 bg-white/5 text-white rounded-full text-sm">
+                        Stainless Steel
+                    </span>
+
+                    <span class="px-3 py-1 bg-white/5 text-white rounded-full text-sm">
+                        Waterproof
+                    </span>
+
+                </div>
+
+                <div class="flex items-center justify-between mt-6">
+
+                    <h4 class="text-3xl font-black text-white">
+                        ₹49,999
+                    </h4>
+
+                    <span class="text-green-400">
+                        In Stock
+                    </span>
+
+                </div>
+
+                <div class="grid grid-cols-2 gap-3 mt-6">
+
+                    <a href="/product.html"
+                        class="py-3 rounded-xl bg-amber-500 text-white text-center font-bold">
+
+                        Details
+
+                    </a>
+
+                    <a href="https://wa.me/919999999999"
+                        class="py-3 rounded-xl bg-green-500 text-white text-center font-bold">
+
+                        WhatsApp
+
+                    </a>
+
+                </div>
+
+            </div>
+
+        </div>
+
+
+
+        
+        <!-- Product Card -->
+
+        <div class="group bg-[#0F172A] border border-white/10 rounded-[32px] overflow-hidden hover:border-amber-500/40 transition-all duration-500">
+
+            <div class="relative overflow-hidden">
+
+                <span class="absolute top-4 left-4 z-10 px-3 py-1 rounded-full bg-amber-500 text-white text-sm font-bold">
+                    Best Seller
+                </span>
+
+                <img src="/cart.jpg"
+                    class="w-full h-72 object-cover group-hover:scale-110 duration-700">
+
+            </div>
+
+            <div class="p-7">
+
+                <span class="text-amber-400 text-sm">
+                    Tea & Coffee Cart
+                </span>
+
+                <h3 class="text-3xl font-bold text-white mt-3">
+                    Premium Tea Cart
+                </h3>
+
+                <p class="text-slate-400 mt-4">
+                    Modern tea cart with stainless steel body and branding panel.
+                </p>
+
+                <div class="flex flex-wrap gap-2 mt-5">
+
+                    <span class="px-3 py-1 bg-white/5 text-white rounded-full text-sm">
+                        Stainless Steel
+                    </span>
+
+                    <span class="px-3 py-1 bg-white/5 text-white rounded-full text-sm">
+                        Waterproof
+                    </span>
+
+                </div>
+
+                <div class="flex items-center justify-between mt-6">
+
+                    <h4 class="text-3xl font-black text-white">
+                        ₹49,999
+                    </h4>
+
+                    <span class="text-green-400">
+                        In Stock
+                    </span>
+
+                </div>
+
+                <div class="grid grid-cols-2 gap-3 mt-6">
+
+                    <a href="/product.html"
+                        class="py-3 rounded-xl bg-amber-500 text-white text-center font-bold">
+
+                        Details
+
+                    </a>
+
+                    <a href="https://wa.me/919999999999"
+                        class="py-3 rounded-xl bg-green-500 text-white text-center font-bold">
+
+                        WhatsApp
+
+                    </a>
+
+                </div>
+
+            </div>
+
+        </div>
+
+        <!-- Duplicate & Change Content -->
+
+        <!-- Fast Food Cart -->
+
+        <!-- Juice Cart -->
+
+        <!-- Ice Cream Cart -->
+
+        <!-- Momos Cart -->
+
+        <!-- Chaat Cart -->
+
+        <!-- Food Truck -->
+
+        <!-- Coffee Cart -->
+
+        <!-- Kiosk -->
+
+    </div>
+
+</div>
+```
+
+</section>
+
+
+
+
+
+
+
+<!-- FLOATING WHATSAPP -->
+
+<section class="py-28 bg-[#020617]">
+
+    <div class="max-w-7xl mx-auto px-6">
+
+        <div class="text-center mb-16">
+
+            <span class="text-amber-400">
+                FOLLOW US
+            </span>
+
+            <h2 class="text-5xl font-black text-white mt-4">
+                Latest Instagram Reels
+            </h2>
+
+        </div>
+
+        <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+
+            <blockquote class="instagram-media"
+                data-instgrm-permalink="https://www.instagram.com/reel/DKOITriyUlO/">
+            </blockquote>
+
+            <blockquote class="instagram-media"
+                data-instgrm-permalink="https://www.instagram.com/reel/DXYm7yFkwTT/">
+            </blockquote>
+
+            <blockquote class="instagram-media"
+                data-instgrm-permalink="https://www.instagram.com/reel/DZct35NyoY6/">
+            </blockquote>
+
+        </div>
+
+    </div>
+
+</section>
+
+<script async src="//www.instagram.com/embed.js"></script>
+
+
+<!-- Footer -->
+<footer class="bg-black border-t border-white/10">
+
+    <div class="max-w-7xl mx-auto px-6 py-16">
+
+        <div class="grid md:grid-cols-4 gap-10">
+
+            <!-- About -->
+
+            <div>
+
+                <h3 class="text-3xl font-bold text-amber-400">
+                    FOOD CART
+                </h3>
+
+                <p class="text-slate-400 mt-4">
+                    Premium Food Cart, Food Truck & Kiosk Manufacturer
+                    with PAN India Delivery.
+                </p>
+
+            </div>
+
+            <!-- Links -->
+
+            <div>
+
+                <h4 class="text-white font-bold mb-5">
+                    Quick Links
+                </h4>
+
+                <ul class="space-y-3 text-slate-400">
+
+                    <li><a href="#">Home</a></li>
+                    <li><a href="#">Products</a></li>
+                    <li><a href="#">Gallery</a></li>
+                    <li><a href="#">Contact</a></li>
+
+                </ul>
+
+            </div>
+
+            <!-- Products -->
+
+            <div>
+
+                <h4 class="text-white font-bold mb-5">
+                    Products
+                </h4>
+
+                <ul class="space-y-3 text-slate-400">
+
+                    <li>Tea Cart</li>
+                    <li>Food Truck</li>
+                    <li>Juice Cart</li>
+                    <li>Kiosk Design</li>
+
+                </ul>
+
+            </div>
+
+            <!-- Contact -->
+
+            <div>
+
+                <h4 class="text-white font-bold mb-5">
+                    Contact
+                </h4>
+
+                <ul class="space-y-3 text-slate-400">
+
+                    <li>📞 +91 9876543210</li>
+                    <li>📧 info@yourdomain.com</li>
+                    <li>📍 India</li>
+
+                </ul>
+
+            </div>
+
+        </div>
+
+        <div class="border-t border-white/10 mt-12 pt-8 flex flex-col md:flex-row justify-between items-center">
+
+            <p class="text-slate-500">
+                © 2026 All Rights Reserved.
+            </p>
+
+            <p class="text-slate-500 mt-3 md:mt-0">
+                Developed By
+                <a href="https://nexahost.in"
+                   target="_blank"
+                   class="text-amber-400 hover:text-amber-300">
+                    NexaHost Technologies
+                </a>
+            </p>
+
+        </div>
+
+    </div>
+
+</footer>
+<a href="https://wa.me/919999999999"
+   target="_blank"
+   class="fixed bottom-6 mb-5 right-6 z-50 w-16 h-16 rounded-full bg-green-500 flex items-center justify-center shadow-2xl hover:scale-110 transition">
+
+    <i class='bx bxl-whatsapp text-white text-4xl'></i>
+
+</a>
+
+<button id="topBtn"
+    class="fixed bottom-28 right-6 z-50 w-14 h-14 rounded-full bg-amber-500  text-white text-xl shadow-xl hidden">
+
+    ↑
+
+</button>
+
+<script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
+
+<script>
+AOS.init({
+    duration:1000,
+    once:true
+});
+
+
+
+const preview = document.getElementById("cartPreview");
+
+document.querySelectorAll(".color-btn").forEach(btn => {
+
+    btn.addEventListener("click", () => {
+
+        const color =
+            getComputedStyle(btn).backgroundColor;
+
+        preview.style.filter =
+            `drop-shadow(0 0 40px ${color})`;
+
+    });
+
+});
+
+
+
+
+
+</script>
+
+<script>
+
+const topBtn =
+document.getElementById("topBtn");
+
+window.addEventListener("scroll",()=>{
+
+    if(window.scrollY > 300){
+
+        topBtn.classList.remove("hidden");
+
+    }else{
+
+        topBtn.classList.add("hidden");
+
+    }
+
+});
+
+topBtn.addEventListener("click",()=>{
+
+    window.scrollTo({
+        top:0,
+        behavior:"smooth"
+    });
+
+});
+
+</script>
+
+<script>
+
+const cards =
+document.querySelectorAll('.showcase-card');
+
+cards.forEach(card=>{
+
+card.addEventListener('mousemove',(e)=>{
+
+const rect=
+card.getBoundingClientRect();
+
+const x=
+e.clientX-rect.left;
+
+const y=
+e.clientY-rect.top;
+
+const rotateY=
+((x/rect.width)-0.5)*20;
+
+const rotateX=
+((y/rect.height)-0.5)*-20;
+
+card.style.transform=
+`rotateY(${rotateY}deg)
+ rotateX(${rotateX}deg)`;
+
+});
+
+card.addEventListener('mouseleave',()=>{
+
+card.style.transform='';
+
+});
+
+});
+
+</script>
+
+
+</body>
+</html>

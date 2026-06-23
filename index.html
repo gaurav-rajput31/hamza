@@ -1,0 +1,2747 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Food Cart Manufacturer</title>
+
+<!-- Tailwind CSS -->
+<script src="https://cdn.tailwindcss.com"></script>
+
+<!-- AOS Animation -->
+<link href="https://unpkg.com/aos@2.3.4/dist/aos.css" rel="stylesheet">
+
+<!-- Boxicons -->
+<link href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css" rel="stylesheet">
+
+<style>
+html{
+    scroll-behavior:smooth;
+}
+
+.hero-bg{
+    background:linear-gradient(rgba(0,0,0,.75),rgba(0,0,0,.75)),
+    url('https://images.unsplash.com/photo-1504674900247-0877df9cc836');
+    background-size:cover;
+    background-position:center;
+}
+
+.glow-btn{
+    box-shadow:0 0 20px rgba(245,158,11,.4);
+}
+
+.service-card{
+    transition:.4s;
+}
+
+.service-card:hover{
+    transform:translateY(-10px);
+}
+
+.counter-box{
+    backdrop-filter:blur(10px);
+}
+
+.showcase-wrapper{
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    gap:40px;
+    perspective:2500px;
+    padding:40px 0;
+}
+
+.showcase-card{
+    position:relative;
+    width:340px;
+    height:520px;
+    border-radius:32px;
+    overflow:hidden;
+    cursor:pointer;
+    transition:.6s ease;
+    transform-style:preserve-3d;
+    border:1px solid rgba(255,255,255,.08);
+    background:#0f172a;
+}
+
+.showcase-card img{
+    width:100%;
+    height:100%;
+    object-fit:cover;
+    transition:1s ease;
+}
+
+/* Strong Bottom Gradient */
+
+.showcase-card::before{
+    content:'';
+    position:absolute;
+    inset:0;
+    background:
+    linear-gradient(
+        to top,
+        rgba(2,6,23,1) 0%,
+        rgba(2,6,23,.95) 20%,
+        rgba(2,6,23,.65) 45%,
+        transparent 75%
+    );
+    z-index:2;
+}
+
+/* Shine Effect */
+
+.showcase-card::after{
+    content:'';
+    position:absolute;
+    top:-100%;
+    left:-100%;
+    width:80%;
+    height:250%;
+    background:
+    linear-gradient(
+        120deg,
+        transparent,
+        rgba(255,255,255,.12),
+        transparent
+    );
+    transform:rotate(25deg);
+    transition:.8s;
+    z-index:4;
+}
+
+.showcase-card:hover::after{
+    left:150%;
+}
+
+/* Center Card */
+
+.active-card{
+    width:420px;
+    height:620px;
+    transform:translateZ(120px);
+    box-shadow:
+    0 40px 100px rgba(245,158,11,.18);
+}
+
+/* Side Cards */
+
+.side-card:first-child{
+    transform:
+    rotateY(25deg)
+    scale(.88);
+    opacity:.75;
+}
+
+.side-card:last-child{
+    transform:
+    rotateY(-25deg)
+    scale(.88);
+    opacity:.75;
+}
+
+/* Hover */
+
+.showcase-card:hover{
+    transform:translateY(-15px);
+}
+
+.showcase-card:hover img{
+    transform:scale(1.12);
+}
+
+/* Content */
+
+.card-content{
+    position:absolute;
+    left:0;
+    right:0;
+    bottom:0;
+    z-index:5;
+    padding:32px;
+    transition:.5s;
+}
+
+.showcase-card:hover .card-content{
+    transform:translateY(-12px);
+}
+
+.card-content span{
+    display:inline-block;
+    padding:8px 14px;
+    border-radius:999px;
+    background:rgba(245,158,11,.15);
+    border:1px solid rgba(245,158,11,.3);
+    color:#fbbf24;
+    font-size:12px;
+    margin-bottom:14px;
+}
+
+.card-content h3{
+    color:#fff;
+    font-size:32px;
+    font-weight:800;
+    line-height:1.1;
+    margin-bottom:10px;
+}
+
+.card-content p{
+    color:#cbd5e1;
+    font-size:15px;
+    line-height:1.7;
+    margin-bottom:18px;
+}
+
+.card-link{
+    display:inline-flex;
+    align-items:center;
+    gap:8px;
+    color:#fbbf24;
+    font-weight:600;
+}
+
+/* Premium Glow */
+
+.glow{
+    position:absolute;
+    inset:0;
+    background:
+    radial-gradient(
+        circle at center,
+        rgba(245,158,11,.22),
+        transparent 70%
+    );
+    z-index:1;
+}
+
+
+
+@keyframes marquee{
+0%{transform:translateX(0);}
+100%{transform:translateX(-50%);}
+}
+
+.animate-marquee{
+animation:marquee 20s linear infinite;
+}
+
+
+
+
+.group{
+    transition:all .5s ease;
+}
+
+.group:hover{
+    transform:translateY(-15px);
+    box-shadow:0 30px 60px rgba(245,158,11,.15);
+}
+
+.group::before{
+    content:'';
+    position:absolute;
+    inset:0;
+    background:linear-gradient(
+        135deg,
+        rgba(245,158,11,.08),
+        transparent
+    );
+    opacity:0;
+    transition:.5s;
+}
+
+.group:hover::before{
+    opacity:1;
+}
+
+
+</style>
+
+</head>
+<body class="bg-slate-950 text-white">
+
+<!-- Navbar -->
+<!-- PREMIUM HEADER -->
+
+<header class="fixed top-0  left-0 w-full z-50">
+
+ 
+<div class="max-w-7xl mx-auto px-6 pt-4">
+
+    <nav class="bg-slate-950/70 backdrop-blur-2xl border border-white/10 rounded-2xl px-6 py-4">
+
+        <div class="flex items-center justify-between">
+
+            <!-- Logo -->
+
+            <a href="#" class="flex items-center gap-3">
+
+                <div
+                    class="w-12 h-12 rounded-xl bg-gradient-to-br from-amber-400 to-orange-500 flex items-center justify-center">
+
+                    🚚
+
+                </div>
+
+                <div>
+
+                    <h2 class="text-xl font-black text-white">
+                        HAMZA
+                    </h2>
+
+                    <span class="text-xs text-slate-400">
+                        Food Cart India
+                    </span>
+
+                </div>
+
+            </a>
+
+            <!-- Desktop Menu -->
+
+            <ul class="hidden lg:flex items-center gap-8">
+
+                <li>
+                    <a href="/index.html" class="hover:text-amber-400 transition">
+                        Home
+                    </a>
+                </li>
+
+                <!-- Dropdown -->
+
+                <li class="relative group">
+
+                    <a href="/products.html"
+                        class="flex items-center gap-2 hover:text-amber-400">
+
+                        Products
+
+                        ▼
+
+                    </a>
+
+                    <div
+                        class="absolute top-full left-0 mt-4 w-72 bg-slate-900 border border-white/10 rounded-2xl p-4 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition">
+
+                        <a href="/product.html" class="block p-3 rounded-xl hover:bg-white/5">
+                            🚚 Food Carts
+                        </a>
+
+                        <a href="/product.html" class="block p-3 rounded-xl hover:bg-white/5">
+                            ☕ Tea Carts
+                        </a>
+
+                        <a href="/product.html" class="block p-3 rounded-xl hover:bg-white/5">
+                            🍔 Fast Food Carts
+                        </a>
+
+                        <a href="/product.html" class="block p-3 rounded-xl hover:bg-white/5">
+                            🚐 Food Trucks
+                        </a>
+
+                    </div>
+
+                </li>
+
+                <li><a href="/gallery.html">Gallery</a></li>
+
+                <li><a href="/about.html">About</a></li>
+
+                <li><a href="/contact.html">Contact</a></li>
+
+            </ul>
+
+            <!-- Right Buttons -->
+
+            <div class="hidden lg:flex items-center gap-3">
+
+                 <a href="#"
+                    class="px-5 py-3 text-white rounded-xl bg-white/5 border border-white/10">
+
+                    📞 Call Now
+
+                </a>
+
+                <a href="#"
+                    class="px-6 py-3 rounded-xl bg-amber-500 text-white font-bold">
+
+                    Get Quote
+
+                </a>
+
+            </div>
+
+            <!-- Mobile Toggle -->
+
+            <button id="menuBtn"
+                class="lg:hidden text-3xl">
+
+                ☰
+
+            </button>
+
+        </div>
+
+    </nav>
+
+</div>
+ 
+
+</header>
+
+<!-- MOBILE MENU -->
+
+<div id="mobileMenu"
+    class="fixed top-0 right-[-100%] w-[320px] h-full bg-slate-950 z-[999] transition-all duration-500">
+
+ 
+<div class="p-8">
+
+    <div class="flex justify-between items-center mb-10">
+
+        <h3 class="text-2xl font-bold">
+            Menu
+        </h3>
+
+        <button id="closeMenu">
+            ✕
+        </button>
+
+    </div>
+
+    <div class="space-y-6">
+
+        <a href="/index.html" class="block">
+            Home
+        </a>
+
+        <a href="/products.html" class="block">
+            Products
+        </a>
+
+        <a href="/gallery.html" class="block">
+            Gallery
+        </a>
+
+        <a href="/about.html" class="block">
+            About
+        </a>
+
+        
+
+        <a href="/contact.html" class="block">
+            Contact
+        </a>
+
+    </div>
+
+    <a href="/contact.html"
+        class="block text-center mt-10 py-4 rounded-xl bg-amber-500 text-white font-bold">
+
+        Get Quote
+
+    </a>
+
+</div>
+ 
+
+</div>
+
+<script>
+
+const menuBtn =
+document.getElementById("menuBtn");
+
+const mobileMenu =
+document.getElementById("mobileMenu");
+
+const closeMenu =
+document.getElementById("closeMenu");
+
+menuBtn.onclick = () => {
+
+mobileMenu.style.right = "0";
+
+}
+
+closeMenu.onclick = () => {
+
+mobileMenu.style.right = "-100%";
+
+}
+
+</script>
+
+<!-- PREMIUM HERO SECTION -->
+
+<section class="relative mt-2 min-h-screen flex items-center overflow-hidden bg-[#020617]">
+
+
+<!-- VIDEO -->
+<video autoplay muted loop playsinline
+    class="absolute inset-0 w-full h-full object-cover">
+    <source src="bg.mp4" type="video/mp4">
+</video>
+
+<!-- OVERLAY -->
+<div class="absolute inset-0 bg-black/75"></div>
+
+<!-- GLOW -->
+<div class="absolute left-0 top-0 w-[600px] h-[600px] bg-amber-500/20 blur-[180px] rounded-full"></div>
+<div class="absolute right-0 bottom-0 w-[600px] h-[600px] bg-orange-500/20 blur-[180px] rounded-full"></div>
+
+<div class="relative z-10 max-w-7xl mx-auto px-8 py-20">
+
+    <div class="bg-white/[0.03]
+                backdrop-blur-md
+                border border-white/10
+                rounded-[32px]
+                p-8 lg:p-12">
+
+        <!-- Hero Content -->
+
+    
+
+
+
+    <div class="grid lg:grid-cols-2 gap-20 items-center">
+
+        <!-- LEFT CONTENT -->
+
+        <div>
+
+            <div class="inline-flex items-center gap-2 px-5 py-3 rounded-full border border-amber-500/20 bg-white/5 backdrop-blur-xl text-amber-400">
+                🚀 India's Trusted Food Cart Manufacturer
+            </div>
+
+            <h1 class="mt-8 text-6xl lg:text-8xl font-black leading-none text-white">
+
+                Build Your
+
+                <span class="block text-transparent bg-clip-text bg-gradient-to-r from-amber-400 via-yellow-300 to-orange-500">
+                    Dream Food
+                </span>
+
+                Business
+
+            </h1>
+
+            <p class="mt-8 text-lg text-slate-300 max-w-xl">
+
+                We design and manufacture
+
+                <span class="text-amber-400 font-semibold">Custom Food Carts</span>,
+                <span class="text-amber-400 font-semibold">Food Trucks</span>,
+                <span class="text-amber-400 font-semibold">Tea Stalls</span>
+                and
+                <span class="text-amber-400 font-semibold">Modern Kiosks</span>
+
+                across India.
+
+            </p>
+
+            <div class="flex flex-wrap gap-3 mt-8">
+
+                <span class="px-4 py-2 rounded-full bg-white/5 border border-white/10">
+                    Food Cart
+                </span>
+
+                <span class="px-4 py-2 rounded-full bg-white/5 border border-white/10">
+                    Food Truck
+                </span>
+
+                <span class="px-4 py-2 rounded-full bg-white/5 border border-white/10">
+                    Tea Stall
+                </span>
+
+                <span class="px-4 py-2 rounded-full bg-white/5 border border-white/10">
+                    Kiosk Design
+                </span>
+
+            </div>
+
+            <div class="flex gap-4 mt-10">
+
+                <a href="#"
+                    class="px-8 py-4 rounded-full bg-amber-500 text-white font-bold hover:scale-105 transition">
+                    Get Price List
+                </a>
+
+                <a href="#"
+                    class="px-8 py-4 rounded-full border border-white/10 bg-white/5 backdrop-blur-xl">
+                    View Designs
+                </a>
+
+            </div>
+
+            <!-- STATS -->
+
+            <div class="grid grid-cols-3 gap-4 mt-12">
+
+                <div class="bg-white/5 backdrop-blur-xl border border-white/10 rounded-2xl p-4 text-center">
+                    <h3 class="text-amber-400 text-3xl font-bold">1500+</h3>
+                    <p class="text-sm text-slate-400">Projects</p>
+                </div>
+
+                <div class="bg-white/5 backdrop-blur-xl border border-white/10 rounded-2xl p-4 text-center">
+                    <h3 class="text-amber-400 text-3xl font-bold">500+</h3>
+                    <p class="text-sm text-slate-400">Designs</p>
+                </div>
+
+                <div class="bg-white/5 backdrop-blur-xl border border-white/10 rounded-2xl p-4 text-center">
+                    <h3 class="text-amber-400 text-3xl font-bold">28+</h3>
+                    <p class="text-sm text-slate-400">States</p>
+                </div>
+
+            </div>
+
+        </div>
+
+        <!-- RIGHT -->
+
+        <div class="relative">
+
+            <!-- IMAGE CARD -->
+
+            <div class="relative p-4 rounded-[40px] bg-white/5 backdrop-blur-xl border border-white/10">
+
+                <img src="cart.jpg"
+                    class="w-full h-[650px] object-cover rounded-[30px]">
+
+            </div>
+
+            <!-- FLOATING BADGES -->
+
+            <div class="absolute top-10 -left-8 bg-amber-500 text-white px-5 py-3 rounded-2xl font-semibold shadow-2xl">
+                ⭐ Premium Quality
+            </div>
+
+            <div class="absolute top-1/2 -right-8 bg-white/10 backdrop-blur-xl border border-white/10 px-5 py-3 rounded-2xl">
+                🚚 PAN India Delivery
+            </div>
+
+            <div class="absolute bottom-24 -left-6 bg-white/10 backdrop-blur-xl border border-white/10 px-5 py-3 rounded-2xl">
+                🎨 Custom Branding
+            </div>
+
+            <div class="absolute bottom-8 right-8 bg-amber-500 text-white px-5 py-3 rounded-2xl font-semibold">
+                ⚡ Fast Manufacturing
+            </div>
+
+        </div>
+
+        </div>
+
+    </div>
+
+</div>
+
+
+</section>
+
+<!-- ANIMATED KEYWORDS SECTION -->
+
+<section class="py-20 bg-[#020617] overflow-hidden">
+
+    <div class="max-w-7xl mx-auto px-6">
+
+        <div
+            class="relative bg-white/5 border border-white/10 backdrop-blur-xl rounded-[40px] p-10 lg:p-16 overflow-hidden">
+
+            <!-- Glow -->
+
+            <div
+                class="absolute -top-20 -left-20 w-72 h-72 bg-amber-500/20 blur-[120px] rounded-full">
+            </div>
+
+            <div
+                class="absolute -bottom-20 -right-20 w-72 h-72 bg-orange-500/20 blur-[120px] rounded-full">
+            </div>
+
+            <div
+                class="relative z-10 flex flex-col lg:flex-row items-center justify-between gap-10">
+
+                <!-- Left -->
+
+                <div>
+
+                    <span
+                        class="inline-flex px-5 py-2 rounded-full bg-amber-500/10 border border-amber-500/20 text-amber-400">
+
+                        PREMIUM MANUFACTURER
+
+                    </span>
+
+                    <h2
+                        class="text-4xl md:text-6xl lg:text-7xl font-black text-white mt-6 leading-tight">
+
+                        India's Leading
+
+                        <br>
+
+                        <span class="animated-text"></span>
+
+                    </h2>
+
+                    <p class="text-slate-400 text-lg mt-6 max-w-xl">
+
+                        We manufacture custom food carts, tea stalls,
+                        food trucks, kiosks and complete business setups
+                        with premium quality and PAN India delivery.
+
+                    </p>
+
+                </div>
+
+                <!-- Right Icon -->
+
+                <div
+                    class="w-40 h-40 rounded-[35px] bg-gradient-to-br from-amber-400 to-orange-500 flex items-center justify-center shadow-[0_0_80px_rgba(245,158,11,.4)] animate-bounce">
+
+                    <i class='bx bx-store text-7xl text-white'></i>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+<style>
+
+.animated-text{
+    color:#f59e0b;
+    position:relative;
+    display:inline-block;
+    min-width:420px;
+}
+
+.animated-text::after{
+    content:'';
+    animation:keywordSlider 15s infinite;
+}
+
+@keyframes keywordSlider{
+
+    0%,12%{
+        content:'🚚 Food Carts';
+        opacity:1;
+    }
+
+    15%,27%{
+        content:'☕ Tea Stalls';
+        opacity:1;
+    }
+
+    30%,42%{
+        content:'🍔 Fast Food Carts';
+        opacity:1;
+    }
+
+    45%,57%{
+        content:'🚐 Food Trucks';
+        opacity:1;
+    }
+
+    60%,72%{
+        content:'🏪 Modern Kiosks';
+        opacity:1;
+    }
+
+    75%,87%{
+        content:'🎨 Custom Branding';
+        opacity:1;
+    }
+
+    90%,100%{
+        content:'⚡ Business Setups';
+        opacity:1;
+    }
+
+}
+
+.animated-text{
+    animation:fadeUp 15s infinite;
+}
+
+@keyframes fadeUp{
+
+    0%,100%{
+        transform:translateY(0);
+    }
+
+    50%{
+        transform:translateY(-5px);
+    }
+
+}
+
+</style>
+
+
+
+<section class="py-28 bg-[#020617] overflow-hidden">
+
+    <div class="max-w-7xl mx-auto px-6">
+
+        <div class="text-center mb-20">
+
+            <span
+                class="px-5 py-2 rounded-full bg-amber-500/10 border border-amber-500/20 text-amber-400">
+
+                OUR COLLECTION
+
+            </span>
+
+            <h2 class="text-5xl lg:text-7xl font-black text-white mt-6">
+
+                3D Food Cart
+                <span class="text-amber-400">
+                    Showcase
+                </span>
+
+            </h2>
+
+            <p class="text-slate-400 max-w-2xl mx-auto mt-6">
+
+                Explore our premium collection of custom food carts,
+                kiosks and food trucks designed for every business idea.
+
+            </p>
+
+        </div>
+
+        <!-- Showcase -->
+
+        <div class="showcase-wrapper">
+
+            <!-- Left -->
+
+            <div class="showcase-card side-card">
+
+                <img src="/cart.jpg">
+
+                <div class="card-content">
+                    <h3>Tea Cart</h3>
+                    <p>Custom Tea & Coffee Setup</p>
+                </div>
+
+            </div>
+
+            <!-- Center -->
+
+            <div class="showcase-card active-card">
+
+                <div class="glow"></div>
+
+                <img src="/cart.jpg">
+
+                <div class="card-content">
+                    <h3>Premium Food Cart</h3>
+                    <p>Luxury Street Food Setup</p>
+                </div>
+
+            </div>
+
+            <!-- Right -->
+
+            <div class="showcase-card side-card">
+
+                <img src="/cart.jpg">
+
+                <div class="card-content">
+                    <h3>Food Truck</h3>
+                    <p>Fully Customized Truck</p>
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+
+
+
+<!-- TRUST FEATURES -->
+
+<section class="relative -mt-16 z-20">
+
+ 
+<div class="max-w-7xl mx-auto px-6 animate-marquee">
+
+    <div
+        class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-5">
+
+        <!-- Card -->
+
+        <div
+            class="group bg-white rounded-[30px] p-6 text-center shadow-xl hover:-translate-y-3 hover:shadow-2xl transition-all duration-500">
+
+            <div
+                class="w-20 h-20 mx-auto rounded-3xl bg-gradient-to-br from-amber-400 to-yellow-600 flex items-center justify-center text-4xl text-white group-hover:rotate-12 transition">
+
+                🏪
+
+            </div>
+
+            <h4 class="font-bold text-slate-900 mt-5">
+                Strong & Durable
+            </h4>
+
+        </div>
+
+        <!-- Card -->
+
+        <div
+            class="group bg-white rounded-[30px] p-6 text-center shadow-xl hover:-translate-y-3 hover:shadow-2xl transition-all duration-500">
+
+            <div
+                class="w-20 h-20 mx-auto rounded-3xl bg-gradient-to-br from-amber-400 to-yellow-600 flex items-center justify-center text-4xl text-white group-hover:rotate-12 transition">
+
+                🔧
+
+            </div>
+
+            <h4 class="font-bold text-slate-900 mt-5">
+                Ready Setup
+            </h4>
+
+        </div>
+
+        <!-- Card -->
+
+        <div
+            class="group bg-white rounded-[30px] p-6 text-center shadow-xl hover:-translate-y-3 hover:shadow-2xl transition-all duration-500">
+
+            <div
+                class="w-20 h-20 mx-auto rounded-3xl bg-gradient-to-br from-amber-400 to-yellow-600 flex items-center justify-center text-4xl text-white group-hover:rotate-12 transition">
+
+                🎨
+
+            </div>
+
+            <h4 class="font-bold text-slate-900 mt-5">
+                Custom Design
+            </h4>
+
+        </div>
+
+        <!-- Card -->
+
+        <div
+            class="group bg-white rounded-[30px] p-6 text-center shadow-xl hover:-translate-y-3 hover:shadow-2xl transition-all duration-500">
+
+            <div
+                class="w-20 h-20 mx-auto rounded-3xl bg-gradient-to-br from-amber-400 to-yellow-600 flex items-center justify-center text-4xl text-white group-hover:rotate-12 transition">
+
+                🚚
+
+            </div>
+
+            <h4 class="font-bold text-slate-900 mt-5">
+                PAN India
+            </h4>
+
+        </div>
+
+        <!-- Card -->
+
+        <div
+            class="group bg-white rounded-[30px] p-6 text-center shadow-xl hover:-translate-y-3 hover:shadow-2xl transition-all duration-500">
+
+            <div
+                class="w-20 h-20 mx-auto rounded-3xl bg-gradient-to-br from-amber-400 to-yellow-600 flex items-center justify-center text-4xl text-white group-hover:rotate-12 transition">
+
+                ₹
+
+            </div>
+
+            <h4 class="font-bold text-slate-900 mt-5">
+                Best Pricing
+            </h4>
+
+        </div>
+
+        <!-- Card -->
+
+        <div
+            class="group bg-white rounded-[30px] p-6 text-center shadow-xl hover:-translate-y-3 hover:shadow-2xl transition-all duration-500">
+
+            <div
+                class="w-20 h-20 mx-auto rounded-3xl bg-gradient-to-br from-amber-400 to-yellow-600 flex items-center justify-center text-4xl text-white group-hover:rotate-12 transition">
+
+                🎧
+
+            </div>
+
+            <h4 class="font-bold text-slate-900 mt-5">
+                24/7 Support
+            </h4>
+
+        </div>
+
+    </div>
+
+</div>
+ 
+
+</section>
+
+
+<section class="py-28 bg-[#020617]">
+
+    <div class="max-w-7xl mx-auto px-6">
+
+        <div class="text-center mb-16">
+
+            <span
+                class="px-5 py-2 rounded-full bg-amber-500/10 border border-amber-500/20 text-amber-400">
+
+                BUILD YOUR OWN CART
+
+            </span>
+
+            <h2 class="text-5xl font-black text-white mt-5">
+                Cart Configurator
+            </h2>
+
+            <p class="text-slate-400 mt-4">
+                Customize your dream food cart in real-time.
+            </p>
+
+        </div>
+
+        <div class="grid lg:grid-cols-2 gap-12">
+
+            <!-- Left Panel -->
+
+            <div
+                class="bg-white/5 backdrop-blur-xl border border-white/10 rounded-[30px] p-8">
+
+                <div class="mb-6">
+
+                    <label class="text-white font-semibold block mb-2">
+                        Cart Type
+                    </label>
+
+                    <select id="cartType"
+                        class="w-full bg-slate-900 border border-slate-700 rounded-xl p-4 text-white">
+
+                        <option>Tea Cart</option>
+                        <option>Fast Food Cart</option>
+                        <option>Juice Cart</option>
+                        <option>Food Truck</option>
+
+                    </select>
+
+                </div>
+
+                <div class="mb-6">
+
+                    <label class="text-white font-semibold block mb-2">
+                        Select Color
+                    </label>
+
+                    <div class="flex gap-3">
+
+                        <button class="color-btn w-10 h-10 rounded-full bg-red-500"></button>
+                        <button class="color-btn w-10 h-10 rounded-full bg-blue-500"></button>
+                        <button class="color-btn w-10 h-10 rounded-full bg-green-500"></button>
+                        <button class="color-btn w-10 h-10 rounded-full bg-yellow-500"></button>
+
+                    </div>
+
+                </div>
+
+                <div class="mb-6">
+
+                    <label class="text-white font-semibold block mb-2">
+                        Features
+                    </label>
+
+                    <div class="space-y-3">
+
+                        <label class="flex items-center gap-3 text-white">
+                            <input type="checkbox">
+                            LED Lights
+                        </label>
+
+                        <label class="flex items-center gap-3 text-white">
+                            <input type="checkbox">
+                            Custom Branding
+                        </label>
+
+                        <label class="flex items-center gap-3 text-white">
+                            <input type="checkbox">
+                            Extra Storage
+                        </label>
+
+                    </div>
+
+                </div>
+
+                <button
+                    class="w-full py-4 rounded-xl bg-amber-500 text-white font-bold">
+
+                    Get Instant Quote
+
+                </button>
+
+            </div>
+
+            <!-- Preview -->
+
+            <div
+                class="relative bg-white/5 backdrop-blur-xl border border-white/10 rounded-[30px] p-10">
+
+                <div
+                    class="absolute inset-0 bg-amber-500/10 blur-[120px]"></div>
+
+                <img id="cartPreview"
+                    src="/cart1.jpg"
+                    class="relative z-10 w-full max-w-lg mx-auto animate-float">
+
+                <div
+                    class="grid grid-cols-3 gap-4 mt-8 relative z-10">
+
+                    <div class="text-center">
+                        <h4 class="text-amber-400 text-3xl font-bold">
+                            ₹45K
+                        </h4>
+                        <p class="text-slate-400">
+                            Starting Price
+                        </p>
+                    </div>
+
+                    <div class="text-center">
+                        <h4 class="text-amber-400 text-3xl font-bold">
+                            15 Days
+                        </h4>
+                        <p class="text-slate-400">
+                            Delivery
+                        </p>
+                    </div>
+
+                    <div class="text-center">
+                        <h4 class="text-amber-400 text-3xl font-bold">
+                            1 Year
+                        </h4>
+                        <p class="text-slate-400">
+                            Warranty
+                        </p>
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+<!-- Categories -->
+<section class="py-24">
+
+    <div class="max-w-7xl mx-auto px-6">
+
+        <div class="text-center mb-16">
+            <h2 class="text-5xl font-bold">
+                Popular Cart Categories
+            </h2>
+        </div>
+
+        <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+
+            <div class="service-card bg-slate-900 p-8 rounded-3xl">
+                <i class='bx bx-coffee text-5xl text-amber-400'></i>
+                <h3 class="text-2xl font-bold mt-4">Tea Cart</h3>
+                <p class="text-slate-400 mt-3">
+                    Premium Tea & Coffee Business Carts.
+                </p>
+            </div>
+
+            <div class="service-card bg-slate-900 p-8 rounded-3xl">
+                <i class='bx bx-bowl-hot text-5xl text-amber-400'></i>
+                <h3 class="text-2xl font-bold mt-4">Fast Food Cart</h3>
+                <p class="text-slate-400 mt-3">
+                    Burger, Pizza & Street Food Solutions.
+                </p>
+            </div>
+
+            <div class="service-card bg-slate-900 p-8 rounded-3xl">
+                <i class='bx bx-drink text-5xl text-amber-400'></i>
+                <h3 class="text-2xl font-bold mt-4">Juice Cart</h3>
+                <p class="text-slate-400 mt-3">
+                    Fresh Juice & Beverage Carts.
+                </p>
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<section class="py-32 bg-[#020617] relative overflow-hidden">
+
+    <!-- Glow -->
+
+    <div class="absolute left-0 top-0 w-[500px] h-[500px] bg-amber-500/10 blur-[180px] rounded-full"></div>
+
+    <div class="max-w-7xl mx-auto px-6">
+
+        <div class="grid lg:grid-cols-2 gap-20 items-center">
+
+            <!-- LEFT -->
+
+            <div class="sticky top-32">
+
+                <span
+                    class="px-5 py-2 rounded-full bg-amber-500/10 border border-amber-500/20 text-amber-400">
+
+                    BUSINESS JOURNEY
+
+                </span>
+
+                <h2
+                    class="text-6xl lg:text-8xl font-black text-white mt-8 leading-none">
+
+                    Dream.
+                    <br>
+
+                    Build.
+                    <br>
+
+                    Launch.
+
+                </h2>
+
+                <p class="text-slate-400 mt-8 text-xl">
+
+                    We transform your food business idea
+                    into a fully branded and profitable setup.
+
+                </p>
+
+            </div>
+
+            <!-- RIGHT -->
+
+            <div class="relative">
+
+                <!-- Line -->
+
+                <div
+                    class="absolute left-8 top-0 w-1 h-full bg-gradient-to-b from-amber-500 to-transparent">
+                </div>
+
+                <!-- Step -->
+
+                <div class="relative pl-24 mb-20">
+
+                    <div
+                        class="absolute left-0 w-16 h-16 rounded-full bg-amber-500 text-white flex items-center justify-center font-bold">
+
+                        01
+
+                    </div>
+
+                    <h3 class="text-white text-3xl font-bold">
+                        Share Your Idea
+                    </h3>
+
+                    <p class="text-slate-400 mt-3">
+                        Tell us your vision and requirements.
+                    </p>
+
+                </div>
+
+                <div class="relative pl-24 mb-20">
+
+                    <div
+                        class="absolute left-0 w-16 h-16 rounded-full bg-amber-500 text-white flex items-center justify-center font-bold">
+
+                        02
+
+                    </div>
+
+                    <h3 class="text-white text-3xl font-bold">
+                        Design & Planning
+                    </h3>
+
+                    <p class="text-slate-400 mt-3">
+                        Custom layout and branding concepts.
+                    </p>
+
+                </div>
+
+                <div class="relative pl-24 mb-20">
+
+                    <div
+                        class="absolute left-0 w-16 h-16 rounded-full bg-amber-500 text-white flex items-center justify-center font-bold">
+
+                        03
+
+                    </div>
+
+                    <h3 class="text-white text-3xl font-bold">
+                        Manufacturing
+                    </h3>
+
+                    <p class="text-slate-400 mt-3">
+                        Premium fabrication and finishing.
+                    </p>
+
+                </div>
+
+                <div class="relative pl-24">
+
+                    <div
+                        class="absolute left-0 w-16 h-16 rounded-full bg-amber-500 text-white flex items-center justify-center font-bold">
+
+                        04
+
+                    </div>
+
+                    <h3 class="text-white text-3xl font-bold">
+                        Launch Business
+                    </h3>
+
+                    <p class="text-slate-400 mt-3">
+                        Start serving customers and earning.
+                    </p>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+
+<!-- Stats -->
+<section class="py-16 bg-slate-900">
+
+    <div class="max-w-7xl mx-auto px-6">
+           
+        <div class="grid md:grid-cols-4 gap-6">
+
+            <div class="counter-box bg-slate-800 p-8 rounded-3xl text-center">
+                <h2 class="text-4xl font-bold text-amber-400">1500+</h2>
+                <p>Projects Delivered</p>
+            </div>
+
+            <div class="counter-box bg-slate-800 p-8 rounded-3xl text-center">
+                <h2 class="text-4xl font-bold text-amber-400">28+</h2>
+                <p>States Covered</p>
+            </div>
+
+            <div class="counter-box bg-slate-800 p-8 rounded-3xl text-center">
+                <h2 class="text-4xl font-bold text-amber-400">500+</h2>
+                <p>Cart Designs</p>
+            </div>
+
+            <div class="counter-box bg-slate-800 p-8 rounded-3xl text-center">
+                <h2 class="text-4xl font-bold text-amber-400">24/7</h2>
+                <p>Support</p>
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+<!-- PREMIUM GALLERY -->
+
+<section class="py-28 bg-[#020617]">
+
+<div class="max-w-7xl mx-auto px-6">
+
+    <!-- Heading -->
+
+    <div class="text-center mb-16">
+
+        <span class="inline-flex px-5 py-2 rounded-full bg-amber-500/10 border border-amber-500/20 text-amber-400">
+            OUR WORK
+        </span>
+
+        <h2 class="text-5xl lg:text-7xl font-black text-white mt-6">
+            Premium
+            <span class="text-amber-400">
+                Gallery
+            </span>
+        </h2>
+
+        <p class="text-slate-400 mt-5 max-w-2xl mx-auto">
+            Explore our custom food carts, food trucks,
+            manufacturing process and successful client projects.
+        </p>
+
+    </div>
+
+    <!-- Gallery -->
+
+    <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+
+        <!-- Card -->
+
+        <div class="group relative overflow-hidden rounded-[30px] h-[420px]">
+
+            <img src="/cart.jpg"
+                class="w-full h-full object-cover transition duration-700 group-hover:scale-110">
+
+            <div class="absolute inset-0 bg-gradient-to-t from-black via-black/40 to-transparent"></div>
+
+            <div class="absolute bottom-0 left-0 p-6">
+                <span class="text-amber-400 text-sm">Food Cart</span>
+                <h3 class="text-white text-2xl font-bold mt-2">
+                    Custom Tea Cart
+                </h3>
+            </div>
+
+        </div>
+
+        <div class="group relative overflow-hidden rounded-[30px] h-[420px]">
+
+            <img src="/cart1.jpg"
+                class="w-full h-full object-cover transition duration-700 group-hover:scale-110">
+
+            <div class="absolute inset-0 bg-gradient-to-t from-black via-black/40 to-transparent"></div>
+
+            <div class="absolute bottom-0 left-0 p-6">
+                <span class="text-amber-400 text-sm">Manufacturing</span>
+                <h3 class="text-white text-2xl font-bold mt-2">
+                    Workshop Process
+                </h3>
+            </div>
+
+        </div>
+
+        <div class="group relative overflow-hidden rounded-[30px] h-[420px]">
+
+            <img src="/cart.jpg"
+                class="w-full h-full object-cover transition duration-700 group-hover:scale-110">
+
+            <div class="absolute inset-0 bg-gradient-to-t from-black via-black/40 to-transparent"></div>
+
+            <div class="absolute bottom-0 left-0 p-6">
+                <span class="text-amber-400 text-sm">Food Truck</span>
+                <h3 class="text-white text-2xl font-bold mt-2">
+                    Mobile Kitchen
+                </h3>
+            </div>
+
+        </div>
+
+        <div class="group relative overflow-hidden rounded-[30px] h-[420px]">
+
+            <img src="/cart1.jpg"
+                class="w-full h-full object-cover transition duration-700 group-hover:scale-110">
+
+            <div class="absolute inset-0 bg-gradient-to-t from-black via-black/40 to-transparent"></div>
+
+            <div class="absolute bottom-0 left-0 p-6">
+                <span class="text-amber-400 text-sm">Before / After</span>
+                <h3 class="text-white text-2xl font-bold mt-2">
+                    Branding Transformation
+                </h3>
+            </div>
+
+        </div>
+
+        <div class="group relative overflow-hidden rounded-[30px] h-[420px]">
+
+            <img src="/cart.jpg"
+                class="w-full h-full object-cover transition duration-700 group-hover:scale-110">
+
+            <div class="absolute inset-0 bg-gradient-to-t from-black via-black/40 to-transparent"></div>
+
+            <div class="absolute bottom-0 left-0 p-6">
+                <span class="text-amber-400 text-sm">Client Project</span>
+                <h3 class="text-white text-2xl font-bold mt-2">
+                    Street Food Setup
+                </h3>
+            </div>
+
+        </div>
+
+        <div class="group relative overflow-hidden rounded-[30px] h-[420px]">
+
+            <img src="/cart.jpg"
+                class="w-full h-full object-cover transition duration-700 group-hover:scale-110">
+
+            <div class="absolute inset-0 bg-gradient-to-t from-black via-black/40 to-transparent"></div>
+
+            <div class="absolute bottom-0 left-0 p-6">
+                <span class="text-amber-400 text-sm">Premium Collection</span>
+                <h3 class="text-white text-2xl font-bold mt-2">
+                    Luxury Food Cart
+                </h3>
+            </div>
+
+        </div>
+
+    </div>
+
+</div>
+
+
+</section>
+
+
+
+
+<!-- CTA -->
+<section class="py-24 bg-amber-500 text-white">
+
+    <div class="max-w-5xl mx-auto text-center px-6">
+
+        <h2 class="text-5xl font-bold">
+            Start Your Food Business Today
+        </h2>
+
+        <p class="mt-5 text-xl">
+            Get Custom Food Cart Designs & Best Pricing.
+        </p>
+
+        <a href="#"
+           class="inline-block mt-8 bg-black text-white px-10 py-4 rounded-full">
+            Request Quote
+        </a>
+
+    </div>
+
+</section>
+
+
+<!-- WHY CHOOSE US -->
+
+<section class="py-28 bg-[#020617] relative overflow-hidden">
+
+
+<div class="absolute top-0 left-0 w-96 h-96 bg-amber-500/10 blur-[150px] rounded-full"></div>
+<div class="absolute bottom-0 right-0 w-96 h-96 bg-orange-500/10 blur-[150px] rounded-full"></div>
+
+<div class="max-w-7xl mx-auto px-6 relative z-10">
+
+    <!-- Heading -->
+
+    <div class="text-center mb-20">
+
+        <span class="inline-flex px-5 py-2 rounded-full bg-amber-500/10 border border-amber-500/20 text-amber-400">
+            WHY CHOOSE US
+        </span>
+
+        <h2 class="text-5xl lg:text-7xl font-black text-white mt-6">
+            Built For
+            <span class="text-amber-400">
+                Success
+            </span>
+        </h2>
+
+        <p class="text-slate-400 mt-6 max-w-2xl mx-auto">
+            Premium quality food carts engineered for durability,
+            branding and long-term business growth.
+        </p>
+
+    </div>
+
+    <!-- Cards -->
+
+    <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+
+        <!-- Card 1 -->
+
+        <div class="group bg-white/5 backdrop-blur-xl border border-white/10 rounded-[30px] p-8 hover:border-amber-500/40 transition-all duration-500">
+
+            <div class="w-16 h-16 rounded-2xl bg-amber-500/10 flex items-center justify-center text-3xl mb-6">
+                🛡️
+            </div>
+
+            <h3 class="text-2xl font-bold text-white mb-4">
+                Stainless Steel Body
+            </h3>
+
+            <p class="text-slate-400">
+                Premium grade stainless steel construction for maximum durability and long life.
+            </p>
+
+        </div>
+
+        <!-- Card 2 -->
+
+        <div class="group bg-white/5 backdrop-blur-xl border border-white/10 rounded-[30px] p-8 hover:border-amber-500/40 transition-all duration-500">
+
+            <div class="w-16 h-16 rounded-2xl bg-amber-500/10 flex items-center justify-center text-3xl mb-6">
+                💧
+            </div>
+
+            <h3 class="text-2xl font-bold text-white mb-4">
+                Waterproof Design
+            </h3>
+
+            <p class="text-slate-400">
+                Designed to withstand rain, sunlight and outdoor conditions throughout the year.
+            </p>
+
+        </div>
+
+        <!-- Card 3 -->
+
+        <div class="group bg-white/5 backdrop-blur-xl border border-white/10 rounded-[30px] p-8 hover:border-amber-500/40 transition-all duration-500">
+
+            <div class="w-16 h-16 rounded-2xl bg-amber-500/10 flex items-center justify-center text-3xl mb-6">
+                🚚
+            </div>
+
+            <h3 class="text-2xl font-bold text-white mb-4">
+                PAN India Delivery
+            </h3>
+
+            <p class="text-slate-400">
+                Safe and reliable delivery service available across all states in India.
+            </p>
+
+        </div>
+
+        <!-- Card 4 -->
+
+        <div class="group bg-white/5 backdrop-blur-xl border border-white/10 rounded-[30px] p-8 hover:border-amber-500/40 transition-all duration-500">
+
+            <div class="w-16 h-16 rounded-2xl bg-amber-500/10 flex items-center justify-center text-3xl mb-6">
+                ⭐
+            </div>
+
+            <h3 class="text-2xl font-bold text-white mb-4">
+                Product Warranty
+            </h3>
+
+            <p class="text-slate-400">
+                Every cart is backed with warranty support for complete peace of mind.
+            </p>
+
+        </div>
+
+        <!-- Card 5 -->
+
+        <div class="group bg-white/5 backdrop-blur-xl border border-white/10 rounded-[30px] p-8 hover:border-amber-500/40 transition-all duration-500">
+
+            <div class="w-16 h-16 rounded-2xl bg-amber-500/10 flex items-center justify-center text-3xl mb-6">
+                🎨
+            </div>
+
+            <h3 class="text-2xl font-bold text-white mb-4">
+                Custom Branding
+            </h3>
+
+            <p class="text-slate-400">
+                Add your logo, colors and business identity with complete customization.
+            </p>
+
+        </div>
+
+        <!-- Card 6 -->
+
+        <div class="group bg-white/5 backdrop-blur-xl border border-white/10 rounded-[30px] p-8 hover:border-amber-500/40 transition-all duration-500">
+
+            <div class="w-16 h-16 rounded-2xl bg-amber-500/10 flex items-center justify-center text-3xl mb-6">
+                ⚡
+            </div>
+
+            <h3 class="text-2xl font-bold text-white mb-4">
+                Fast Manufacturing
+            </h3>
+
+            <p class="text-slate-400">
+                Quick production process ensuring timely delivery without compromising quality.
+            </p>
+
+        </div>
+
+    </div>
+
+</div>
+
+
+</section>
+
+
+<!-- MANUFACTURING PROCESS -->
+
+<section class="py-28 bg-[#020617] relative overflow-hidden">
+
+ 
+<div class="max-w-7xl mx-auto px-6">
+
+    <!-- Heading -->
+
+    <div class="text-center mb-20">
+
+        <span class="inline-flex px-5 py-2 rounded-full bg-amber-500/10 border border-amber-500/20 text-amber-400">
+            OUR PROCESS
+        </span>
+
+        <h2 class="text-5xl lg:text-7xl font-black text-white mt-6">
+
+            Manufacturing
+            <span class="text-amber-400">
+                Process
+            </span>
+
+        </h2>
+
+        <p class="text-slate-400 max-w-2xl mx-auto mt-6">
+            From concept to delivery, every food cart goes through
+            a detailed manufacturing process to ensure quality and durability.
+        </p>
+
+    </div>
+
+    <!-- Timeline -->
+
+    <div class="relative">
+
+        <!-- Center Line -->
+
+        <div class="hidden lg:block absolute left-1/2 top-0 -translate-x-1/2 w-1 h-full bg-gradient-to-b from-amber-500 to-orange-500 rounded-full"></div>
+
+        <div class="space-y-16">
+
+            <!-- Step 1 -->
+
+            <div class="grid lg:grid-cols-2 gap-10 items-center">
+
+                <div class="lg:text-right">
+
+                    <div class="bg-white/5 backdrop-blur-xl border border-white/10 rounded-[30px] p-8">
+
+                        <span class="text-amber-400 text-sm">STEP 01</span>
+
+                        <h3 class="text-3xl font-bold text-white mt-2">
+                            Design & Planning
+                        </h3>
+
+                        <p class="text-slate-400 mt-4">
+                            Understanding client requirements and creating custom cart layouts.
+                        </p>
+
+                    </div>
+
+                </div>
+
+                <div class="relative flex justify-center">
+
+                    <div class="w-20 h-20 rounded-full bg-amber-500 text-white flex items-center justify-center text-3xl font-bold">
+                        01
+                    </div>
+
+                </div>
+
+            </div>
+
+            <!-- Step 2 -->
+
+            <div class="grid lg:grid-cols-2 gap-10 items-center">
+
+                <div class="order-2 lg:order-1 flex justify-center">
+
+                    <div class="w-20 h-20 rounded-full bg-amber-500 text-white flex items-center justify-center text-3xl font-bold">
+                        02
+                    </div>
+
+                </div>
+
+                <div class="order-1 lg:order-2">
+
+                    <div class="bg-white/5 backdrop-blur-xl border border-white/10 rounded-[30px] p-8">
+
+                        <span class="text-amber-400 text-sm">STEP 02</span>
+
+                        <h3 class="text-3xl font-bold text-white mt-2">
+                            Fabrication
+                        </h3>
+
+                        <p class="text-slate-400 mt-4">
+                            Precision cutting, welding and assembly using premium materials.
+                        </p>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+            <!-- Step 3 -->
+
+            <div class="grid lg:grid-cols-2 gap-10 items-center">
+
+                <div class="lg:text-right">
+
+                    <div class="bg-white/5 backdrop-blur-xl border border-white/10 rounded-[30px] p-8">
+
+                        <span class="text-amber-400 text-sm">STEP 03</span>
+
+                        <h3 class="text-3xl font-bold text-white mt-2">
+                            Painting & Finishing
+                        </h3>
+
+                        <p class="text-slate-400 mt-4">
+                            Premium paint coating and weather-resistant finishing.
+                        </p>
+
+                    </div>
+
+                </div>
+
+                <div class="flex justify-center">
+
+                    <div class="w-20 h-20 rounded-full bg-amber-500 text-white flex items-center justify-center text-3xl font-bold">
+                        03
+                    </div>
+
+                </div>
+
+            </div>
+
+            <!-- Step 4 -->
+
+            <div class="grid lg:grid-cols-2 gap-10 items-center">
+
+                <div class="order-2 lg:order-1 flex justify-center">
+
+                    <div class="w-20 h-20 rounded-full bg-amber-500 text-white flex items-center justify-center text-3xl font-bold">
+                        04
+                    </div>
+
+                </div>
+
+                <div class="order-1 lg:order-2">
+
+                    <div class="bg-white/5 backdrop-blur-xl border border-white/10 rounded-[30px] p-8">
+
+                        <span class="text-amber-400 text-sm">STEP 04</span>
+
+                        <h3 class="text-3xl font-bold text-white mt-2">
+                            Branding
+                        </h3>
+
+                        <p class="text-slate-400 mt-4">
+                            Custom logos, graphics and brand identity installation.
+                        </p>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+            <!-- Step 5 -->
+
+            <div class="grid lg:grid-cols-2 gap-10 items-center">
+
+                <div class="lg:text-right">
+
+                    <div class="bg-white/5 backdrop-blur-xl border border-white/10 rounded-[30px] p-8">
+
+                        <span class="text-amber-400 text-sm">STEP 05</span>
+
+                        <h3 class="text-3xl font-bold text-white mt-2">
+                            Quality Check
+                        </h3>
+
+                        <p class="text-slate-400 mt-4">
+                            Every cart undergoes detailed inspection and testing.
+                        </p>
+
+                    </div>
+
+                </div>
+
+                <div class="flex justify-center">
+
+                    <div class="w-20 h-20 rounded-full bg-amber-500 text-white flex items-center justify-center text-3xl font-bold">
+                        05
+                    </div>
+
+                </div>
+
+            </div>
+
+            <!-- Step 6 -->
+
+            <div class="grid lg:grid-cols-2 gap-10 items-center">
+
+                <div class="order-2 lg:order-1 flex justify-center">
+
+                    <div class="w-20 h-20 rounded-full bg-amber-500 text-white flex items-center justify-center text-3xl font-bold">
+                        06
+                    </div>
+
+                </div>
+
+                <div class="order-1 lg:order-2">
+
+                    <div class="bg-white/5 backdrop-blur-xl border border-white/10 rounded-[30px] p-8">
+
+                        <span class="text-amber-400 text-sm">STEP 06</span>
+
+                        <h3 class="text-3xl font-bold text-white mt-2">
+                            Delivery
+                        </h3>
+
+                        <p class="text-slate-400 mt-4">
+                            Secure packaging and PAN India doorstep delivery.
+                        </p>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</div>
+ 
+
+</section>
+
+
+<section class="py-28 bg-[#0F172A]">
+
+    <div class="max-w-7xl mx-auto px-6">
+
+        <div class="text-center mb-20">
+
+            <span class="px-5 py-2 rounded-full bg-amber-500/10 border border-amber-500/20 text-amber-400">
+                SUCCESS STORIES
+            </span>
+
+            <h2 class="text-5xl lg:text-7xl font-black text-white mt-6">
+                Trusted By
+                <span class="text-amber-400">
+                    1500+ Entrepreneurs
+                </span>
+            </h2>
+
+        </div>
+
+        <div class="grid lg:grid-cols-2 gap-10">
+
+            <!-- Featured Video -->
+
+            <div class="relative rounded-[40px] overflow-hidden group">
+
+                <img src="/client1.jpg"
+                    class="w-full h-[600px] object-cover group-hover:scale-105 transition duration-700">
+
+                <div class="absolute inset-0 bg-gradient-to-t from-black via-black/30 to-transparent"></div>
+
+                <div class="absolute inset-0 flex items-center justify-center">
+
+                    <button
+                        class="w-24 h-24 rounded-full bg-amber-500 text-white text-4xl hover:scale-110 transition">
+
+                        ▶
+
+                    </button>
+
+                </div>
+
+                <div class="absolute bottom-8 left-8">
+
+                    <h3 class="text-white text-3xl font-bold">
+                        Rajesh Kumar
+                    </h3>
+
+                    <p class="text-slate-300">
+                        Tea Cart Owner • Delhi
+                    </p>
+
+                </div>
+
+            </div>
+
+            <!-- Reviews -->
+
+            <div class="space-y-6">
+
+                <div
+                    class="bg-white/5 border border-white/10 rounded-[30px] p-6 hover:border-amber-500/40 transition">
+
+                    <div class="flex justify-between">
+
+                        <div>
+
+                            <h4 class="text-white font-bold">
+                                Amit Sharma
+                            </h4>
+
+                            <p class="text-slate-400 text-sm">
+                                Fast Food Cart
+                            </p>
+
+                        </div>
+
+                        <span class="text-amber-400">
+                            ⭐⭐⭐⭐⭐
+                        </span>
+
+                    </div>
+
+                    <p class="text-slate-300 mt-4">
+                        Excellent quality cart. My sales increased significantly after launching.
+                    </p>
+
+                </div>
+
+                <div
+                    class="bg-white/5 border border-white/10 rounded-[30px] p-6 hover:border-amber-500/40 transition">
+
+                    <div class="flex justify-between">
+
+                        <div>
+
+                            <h4 class="text-white font-bold">
+                                Mohit Verma
+                            </h4>
+
+                            <p class="text-slate-400 text-sm">
+                                Juice Cart
+                            </p>
+
+                        </div>
+
+                        <span class="text-amber-400">
+                            ⭐⭐⭐⭐⭐
+                        </span>
+
+                    </div>
+
+                    <p class="text-slate-300 mt-4">
+                        Premium finishing, fast delivery and amazing support team.
+                    </p>
+
+                </div>
+
+                <div
+                    class="bg-white/5 border border-white/10 rounded-[30px] p-6 hover:border-amber-500/40 transition">
+
+                    <div class="flex justify-between">
+
+                        <div>
+
+                            <h4 class="text-white font-bold">
+                                Sandeep Singh
+                            </h4>
+
+                            <p class="text-slate-400 text-sm">
+                                Tea Stall Setup
+                            </p>
+
+                        </div>
+
+                        <span class="text-amber-400">
+                            ⭐⭐⭐⭐⭐
+                        </span>
+
+                    </div>
+
+                    <p class="text-slate-300 mt-4">
+                        Best investment for starting my food business. Highly recommended.
+                    </p>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+<section class="py-28 bg-[#020617]">
+
+ 
+<div class="max-w-7xl mx-auto px-6">
+
+    <div class="text-center mb-20">
+
+        <span class="px-5 py-2 rounded-full bg-amber-500/10 border border-amber-500/20 text-amber-400">
+            PAN INDIA PRESENCE
+        </span>
+
+        <h2 class="text-5xl lg:text-7xl font-black text-white mt-6">
+            Delivered Across
+            <span class="text-amber-400">
+                India
+            </span>
+        </h2>
+
+    </div>
+
+    <div class="grid lg:grid-cols-2 gap-16 items-center">
+
+        <!-- India Map -->
+
+        <div class="relative">
+
+            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSc4saglXGZCr3ByhaaWt7uyPAoHnQgJt3JoCWgRzCO2Q&s=10"
+                class="w-full opacity-90">
+
+            <!-- Delhi -->
+
+            <div class="absolute top-[22%] left-[48%] group">
+
+                <div class="w-4 h-4 bg-amber-500 rounded-full animate-ping absolute"></div>
+
+                <div class="w-4 h-4 bg-amber-500 rounded-full relative"></div>
+
+                <div
+                    class="absolute hidden group-hover:block bg-slate-900 border border-white/10 px-4 py-2 rounded-xl text-white whitespace-nowrap">
+
+                    Delhi - 120 Carts Delivered
+
+                </div>
+
+            </div>
+
+            <!-- Mumbai -->
+
+            <div class="absolute top-[55%] left-[35%] group">
+
+                <div class="w-4 h-4 bg-amber-500 rounded-full animate-ping absolute"></div>
+
+                <div class="w-4 h-4 bg-amber-500 rounded-full relative"></div>
+
+                <div
+                    class="absolute hidden group-hover:block bg-slate-900 border border-white/10 px-4 py-2 rounded-xl text-white whitespace-nowrap">
+
+                    Mumbai - 95 Carts Delivered
+
+                </div>
+
+            </div>
+
+        </div>
+
+        <!-- Stats -->
+
+        <div>
+
+            <div class="space-y-6">
+
+                <div class="bg-white/5 border border-white/10 rounded-3xl p-6">
+
+                    <h3 class="text-amber-400 text-4xl font-bold">
+                        1500+
+                    </h3>
+
+                    <p class="text-slate-400">
+                        Total Delivered Projects
+                    </p>
+
+                </div>
+
+                <div class="bg-white/5 border border-white/10 rounded-3xl p-6">
+
+                    <h3 class="text-amber-400 text-4xl font-bold">
+                        28+
+                    </h3>
+
+                    <p class="text-slate-400">
+                        States Covered
+                    </p>
+
+                </div>
+
+                <div class="bg-white/5 border border-white/10 rounded-3xl p-6">
+
+                    <h3 class="text-amber-400 text-4xl font-bold">
+                        500+
+                    </h3>
+
+                    <p class="text-slate-400">
+                        Unique Cart Designs
+                    </p>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</div>
+ 
+
+</section>
+
+
+
+<!-- PRICING SECTION -->
+
+<section class="py-28 bg-[#020617] overflow-hidden">
+
+ 
+<div class="max-w-7xl mx-auto px-6">
+
+    <!-- Heading -->
+
+    <div class="text-center mb-20">
+
+        <span class="inline-flex px-5 py-2 rounded-full bg-amber-500/10 border border-amber-500/20 text-amber-400">
+            PRICING PLANS
+        </span>
+
+        <h2 class="text-5xl lg:text-7xl font-black text-white mt-6">
+
+            Choose Your
+            <span class="text-amber-400">
+                Business Setup
+            </span>
+
+        </h2>
+
+        <p class="text-slate-400 max-w-2xl mx-auto mt-6">
+            Flexible options for startups, growing businesses and premium brands.
+        </p>
+
+    </div>
+
+    <!-- Pricing Cards -->
+
+    <div class="grid lg:grid-cols-3 gap-8">
+
+        <!-- STARTER -->
+
+        <div class="bg-white/5 backdrop-blur-xl border border-white/10 rounded-[35px] p-8">
+
+            <span class="text-amber-400 font-semibold">
+                STARTER
+            </span>
+
+            <h3 class="text-5xl font-black text-white mt-4">
+                ₹49,999
+            </h3>
+
+            <p class="text-slate-400 mt-4">
+                Perfect for small food businesses and startups.
+            </p>
+
+            <ul class="mt-8 space-y-4 text-slate-300">
+
+                <li>✔ Standard Food Cart</li>
+                <li>✔ Stainless Steel Body</li>
+                <li>✔ Basic Branding</li>
+                <li>✔ Waterproof Design</li>
+                <li>✔ Delivery Support</li>
+
+            </ul>
+
+            <a href="#"
+                class="block text-center mt-8 py-4 rounded-2xl border border-white/10 text-white">
+                Get Quote
+            </a>
+
+        </div>
+
+        <!-- PROFESSIONAL -->
+
+        <div
+            class="relative bg-gradient-to-b from-amber-500 to-orange-500 rounded-[35px] p-[2px]">
+
+            <div
+                class="bg-[#0F172A] rounded-[33px] p-8 h-full">
+
+                <div
+                    class="absolute top-5 right-5 px-4 py-2 rounded-full bg-amber-500 text-white text-sm font-bold">
+
+                    MOST POPULAR
+
+                </div>
+
+                <span class="text-amber-400 font-semibold">
+                    PROFESSIONAL
+                </span>
+
+                <h3 class="text-5xl font-black text-white mt-4">
+                    ₹89,999
+                </h3>
+
+                <p class="text-slate-400 mt-4">
+                    Best choice for serious entrepreneurs.
+                </p>
+
+                <ul class="mt-8 space-y-4 text-slate-300">
+
+                    <li>✔ Premium Food Cart</li>
+                    <li>✔ Custom Branding</li>
+                    <li>✔ LED Lighting</li>
+                    <li>✔ Storage Compartments</li>
+                    <li>✔ Waterproof Structure</li>
+                    <li>✔ 1 Year Warranty</li>
+                    <li>✔ PAN India Delivery</li>
+
+                </ul>
+
+                <a href="#"
+                    class="block text-center mt-8 py-4 rounded-2xl bg-amber-500 text-white font-bold">
+                    Get Quote
+                </a>
+
+            </div>
+
+        </div>
+
+        <!-- PREMIUM -->
+
+        <div class="bg-white/5 backdrop-blur-xl border border-white/10 rounded-[35px] p-8">
+
+            <span class="text-amber-400 font-semibold">
+                PREMIUM
+            </span>
+
+            <h3 class="text-5xl font-black text-white mt-4">
+                ₹1.49L+
+            </h3>
+
+            <p class="text-slate-400 mt-4">
+                Complete premium business solution.
+            </p>
+
+            <ul class="mt-8 space-y-4 text-slate-300">
+
+                <li>✔ Luxury Food Cart</li>
+                <li>✔ Premium Branding</li>
+                <li>✔ LED & Neon Setup</li>
+                <li>✔ Premium Finishing</li>
+                <li>✔ Full Custom Design</li>
+                <li>✔ Extended Warranty</li>
+                <li>✔ Priority Manufacturing</li>
+                <li>✔ Dedicated Support</li>
+
+            </ul>
+
+            <a href="#"
+                class="block text-center mt-8 py-4 rounded-2xl border border-white/10 text-white">
+                Get Quote
+            </a>
+
+        </div>
+
+    </div>
+
+</div>
+ 
+
+</section>
+
+
+<!-- LEAD GENERATION SECTION -->
+
+<section class="py-28 bg-[#020617] relative overflow-hidden">
+
+ 
+<!-- Glow -->
+
+<div class="absolute top-0 left-0 w-96 h-96 bg-amber-500/10 blur-[150px] rounded-full"></div>
+<div class="absolute bottom-0 right-0 w-96 h-96 bg-orange-500/10 blur-[150px] rounded-full"></div>
+
+<div class="max-w-7xl mx-auto px-6 relative z-10">
+
+    <div
+        class="bg-white/5 backdrop-blur-xl border border-white/10 rounded-[40px] overflow-hidden">
+
+        <div class="grid lg:grid-cols-2">
+
+            <!-- LEFT -->
+
+            <div class="p-10 lg:p-14">
+
+                <span
+                    class="inline-flex px-5 py-2 rounded-full bg-amber-500/10 border border-amber-500/20 text-amber-400">
+
+                    GET STARTED TODAY
+
+                </span>
+
+                <h2
+                    class="text-5xl lg:text-6xl font-black text-white mt-6">
+
+                    Start Your
+                    <span class="text-amber-400">
+                        Food Business
+                    </span>
+
+                </h2>
+
+                <p class="text-slate-400 mt-6 text-lg">
+
+                    Get pricing, brochure, design ideas and expert consultation.
+
+                </p>
+
+                <!-- Buttons -->
+
+                <div class="flex flex-wrap gap-4 mt-8">
+
+                    <a href="https://wa.me/919999999999"
+                        class="px-8 py-4 rounded-2xl bg-green-500 text-white font-bold">
+
+                        WhatsApp Now
+                    </a>
+
+                    <a href="/brochure.pdf"
+                        class="px-8 py-4 rounded-2xl bg-amber-500 text-white font-bold">
+
+                        Download Brochure
+                    </a>
+
+                </div>
+
+                <!-- QR -->
+
+                <div class="mt-10">
+
+                    <h4 class="text-white font-semibold mb-4">
+                        Scan QR To Chat On WhatsApp
+                    </h4>
+
+                    <img src="/qr.png"
+                        class="w-40 rounded-2xl border border-white/10">
+
+                </div>
+
+            </div>
+
+            <!-- RIGHT FORM -->
+
+            <div
+                class="bg-slate-900/50 p-10 lg:p-14 border-l border-white/10">
+
+                <h3 class="text-3xl font-bold text-white mb-8">
+
+                    Request A Callback
+
+                </h3>
+
+                <form class="space-y-5">
+
+                    <input
+                        type="text"
+                        placeholder="Your Name"
+                        class="w-full bg-slate-800 border border-slate-700 rounded-2xl p-4 text-white">
+
+                    <input
+                        type="tel"
+                        placeholder="Phone Number"
+                        class="w-full bg-slate-800 border border-slate-700 rounded-2xl p-4 text-white">
+
+                    <input
+                        type="text"
+                        placeholder="Business Type"
+                        class="w-full bg-slate-800 border border-slate-700 rounded-2xl p-4 text-white">
+
+                    <textarea
+                        rows="4"
+                        placeholder="Tell us about your requirement"
+                        class="w-full bg-slate-800 border border-slate-700 rounded-2xl p-4 text-white"></textarea>
+
+                    <button
+                        class="w-full py-4 rounded-2xl bg-amber-500 text-white font-bold">
+
+                        Request Callback
+
+                    </button>
+
+                </form>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</div>
+ 
+
+</section>
+
+<!-- FLOATING WHATSAPP -->
+
+<section class="py-28 bg-[#020617]">
+
+    <div class="max-w-7xl mx-auto px-6">
+
+        <div class="text-center mb-16">
+
+            <span class="text-amber-400">
+                FOLLOW US
+            </span>
+
+            <h2 class="text-5xl font-black text-white mt-4">
+                Latest Instagram Reels
+            </h2>
+
+        </div>
+
+        <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+
+            <blockquote class="instagram-media"
+                data-instgrm-permalink="https://www.instagram.com/reel/DKOITriyUlO/">
+            </blockquote>
+
+            <blockquote class="instagram-media"
+                data-instgrm-permalink="https://www.instagram.com/reel/DXYm7yFkwTT/">
+            </blockquote>
+
+            <blockquote class="instagram-media"
+                data-instgrm-permalink="https://www.instagram.com/reel/DZct35NyoY6/">
+            </blockquote>
+
+        </div>
+
+    </div>
+
+</section>
+
+<script async src="//www.instagram.com/embed.js"></script>
+
+
+<!-- Footer -->
+<footer class="bg-black border-t border-white/10">
+
+    <div class="max-w-7xl mx-auto px-6 py-16">
+
+        <div class="grid md:grid-cols-4 gap-10">
+
+            <!-- About -->
+
+            <div>
+
+                <h3 class="text-3xl font-bold text-amber-400">
+                    FOOD CART
+                </h3>
+
+                <p class="text-slate-400 mt-4">
+                    Premium Food Cart, Food Truck & Kiosk Manufacturer
+                    with PAN India Delivery.
+                </p>
+
+            </div>
+
+            <!-- Links -->
+
+            <div>
+
+                <h4 class="text-white font-bold mb-5">
+                    Quick Links
+                </h4>
+
+                <ul class="space-y-3 text-slate-400">
+
+                    <li><a href="#">Home</a></li>
+                    <li><a href="#">Products</a></li>
+                    <li><a href="#">Gallery</a></li>
+                    <li><a href="#">Contact</a></li>
+
+                </ul>
+
+            </div>
+
+            <!-- Products -->
+
+            <div>
+
+                <h4 class="text-white font-bold mb-5">
+                    Products
+                </h4>
+
+                <ul class="space-y-3 text-slate-400">
+
+                    <li>Tea Cart</li>
+                    <li>Food Truck</li>
+                    <li>Juice Cart</li>
+                    <li>Kiosk Design</li>
+
+                </ul>
+
+            </div>
+
+            <!-- Contact -->
+
+            <div>
+
+                <h4 class="text-white font-bold mb-5">
+                    Contact
+                </h4>
+
+                <ul class="space-y-3 text-slate-400">
+
+                    <li>📞 +91 9876543210</li>
+                    <li>📧 info@yourdomain.com</li>
+                    <li>📍 India</li>
+
+                </ul>
+
+            </div>
+
+        </div>
+
+        <div class="border-t border-white/10 mt-12 pt-8 flex flex-col md:flex-row justify-between items-center">
+
+            <p class="text-slate-500">
+                © 2026 All Rights Reserved.
+            </p>
+
+            <p class="text-slate-500 mt-3 md:mt-0">
+                Developed By
+                <a href="https://nexahost.in"
+                   target="_blank"
+                   class="text-amber-400 hover:text-amber-300">
+                    NexaHost Technologies
+                </a>
+            </p>
+
+        </div>
+
+    </div>
+
+</footer>
+<a href="https://wa.me/919999999999"
+   target="_blank"
+   class="fixed bottom-6 mb-5 right-6 z-50 w-16 h-16 rounded-full bg-green-500 flex items-center justify-center shadow-2xl hover:scale-110 transition">
+
+    <i class='bx bxl-whatsapp text-white text-4xl'></i>
+
+</a>
+
+<button id="topBtn"
+    class="fixed bottom-28 right-6 z-50 w-14 h-14 rounded-full bg-amber-500 text-white text-xl shadow-xl hidden">
+
+    ↑
+
+</button>
+
+<script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
+
+<script>
+AOS.init({
+    duration:1000,
+    once:true
+});
+
+
+
+const preview = document.getElementById("cartPreview");
+
+document.querySelectorAll(".color-btn").forEach(btn => {
+
+    btn.addEventListener("click", () => {
+
+        const color =
+            getComputedStyle(btn).backgroundColor;
+
+        preview.style.filter =
+            `drop-shadow(0 0 40px ${color})`;
+
+    });
+
+});
+
+
+
+
+
+</script>
+
+<script>
+
+const topBtn =
+document.getElementById("topBtn");
+
+window.addEventListener("scroll",()=>{
+
+    if(window.scrollY > 300){
+
+        topBtn.classList.remove("hidden");
+
+    }else{
+
+        topBtn.classList.add("hidden");
+
+    }
+
+});
+
+topBtn.addEventListener("click",()=>{
+
+    window.scrollTo({
+        top:0,
+        behavior:"smooth"
+    });
+
+});
+
+</script>
+
+<script>
+
+const cards =
+document.querySelectorAll('.showcase-card');
+
+cards.forEach(card=>{
+
+card.addEventListener('mousemove',(e)=>{
+
+const rect=
+card.getBoundingClientRect();
+
+const x=
+e.clientX-rect.left;
+
+const y=
+e.clientY-rect.top;
+
+const rotateY=
+((x/rect.width)-0.5)*20;
+
+const rotateX=
+((y/rect.height)-0.5)*-20;
+
+card.style.transform=
+`rotateY(${rotateY}deg)
+ rotateX(${rotateX}deg)`;
+
+});
+
+card.addEventListener('mouseleave',()=>{
+
+card.style.transform='';
+
+});
+
+});
+
+</script>
+
+</body>
+</html>

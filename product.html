@@ -1,0 +1,735 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Tea Cart</title>
+
+<!-- Tailwind CSS -->
+<script src="https://cdn.tailwindcss.com"></script>
+
+<!-- AOS Animation -->
+<link href="https://unpkg.com/aos@2.3.4/dist/aos.css" rel="stylesheet">
+
+<!-- Boxicons -->
+<link href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css" rel="stylesheet">
+
+
+</head>
+<body class="bg-gray-50">
+
+    <header class="fixed top-0  left-0 w-full z-50">
+
+ 
+<div class="max-w-7xl mx-auto px-6 pt-4">
+
+    <nav class="bg-slate-950/70 backdrop-blur-2xl border border-white/10 rounded-2xl px-6 py-4">
+
+        <div class="flex items-center justify-between">
+
+            <!-- Logo -->
+
+            <a href="#" class="flex items-center gap-3">
+
+                <div
+                    class="w-12 h-12 rounded-xl bg-gradient-to-br from-amber-400 to-orange-500 flex items-center justify-center">
+
+                    🚚
+
+                </div>
+
+                <div>
+
+                    <h2 class="text-xl font-black text-white">
+                        HAMZA
+                    </h2>
+
+                    <span class="text-xs text-slate-400">
+                        Food Cart India
+                    </span>
+
+                </div>
+
+            </a>
+
+            <!-- Desktop Menu -->
+
+            <ul class="hidden lg:flex items-center gap-8">
+
+                <li>
+                    <a href="/index.html" class="text-white hover:text-amber-400 transition">
+                        Home
+                    </a>
+                </li>
+
+                <!-- Dropdown -->
+
+                <li class="relative group">
+
+                    <a href="/products.html"
+                        class="text-white hover:text-amber-400 transition">
+
+                        Products
+
+                        ▼
+
+                    </a>
+
+                    <div
+                        class="absolute top-full left-0 mt-4 w-72 bg-slate-900 border border-white/10 rounded-2xl p-4 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition">
+
+                        <a href="/product.html" class="block p-3 rounded-xl hover:bg-white/5 text-white hover:text-amber-400 transition">
+                            🚚 Food Carts
+                        </a>
+
+                        <a href="/product.html" class="block p-3 rounded-xl hover:bg-white/5 text-white hover:text-amber-400 transition">
+                            ☕ Tea Carts
+                        </a>
+
+                        <a href="/product.html" class="block p-3 rounded-xl hover:bg-white/5 text-white hover:text-amber-400 transition">
+                            🍔 Fast Food Carts
+                        </a>
+
+                        <a href="/product.html" class="block p-3 rounded-xl hover:bg-white/5 text-white hover:text-amber-400 transition">
+                            🚐 Food Trucks
+                        </a>
+
+                    </div>
+
+                </li>
+
+                <li><a href="/gallery.html" class="text-white hover:text-amber-400 transition">Gallery</a></li>
+
+                <li><a href="/about.html" class="text-white hover:text-amber-400 transition">About</a></li>
+
+                <li><a href="/contact.html" class="text-white hover:text-amber-400 transition">Contact</a></li>
+
+            </ul>
+
+            <!-- Right Buttons -->
+
+            <div class="hidden lg:flex items-center gap-3">
+
+                <a href="#"
+                    class="px-5 py-3 text-white rounded-xl bg-white/5 border border-white/10">
+
+                    📞 Call Now
+
+                </a>
+
+                <a href="#"
+                    class="px-6 py-3 rounded-xl bg-amber-500  text-white font-bold">
+
+                    Get Quote
+
+                </a>
+
+            </div>
+
+            <!-- Mobile Toggle -->
+
+            <button id="menuBtn"
+                class="lg:hidden text-3xl">
+
+                ☰
+
+            </button>
+
+        </div>
+
+    </nav>
+
+</div>
+ 
+
+</header>
+
+<!-- MOBILE MENU -->
+
+<div id="mobileMenu"
+    class="fixed top-0 right-[-100%] w-[320px] h-full bg-slate-950 z-[999] transition-all duration-500">
+
+ 
+<div class="p-8">
+
+    <div class="flex justify-between items-center mb-10">
+
+        <h3 class="text-2xl font-bold">
+            Menu
+        </h3>
+
+        <button id="closeMenu">
+            ✕
+        </button>
+
+    </div>
+
+    <div class="space-y-6">
+
+        <a href="/index.html" class="block">
+            Home
+        </a>
+
+        <a href="/products.html" class="block">
+            Products
+        </a>
+
+        <a href="/gallery.html" class="block">
+            Gallery
+        </a>
+
+        <a href="/about.html" class="block">
+            About
+        </a>
+
+        
+
+        <a href="/contact.html" class="block">
+            Contact
+        </a>
+
+    </div>
+
+    <a href="/contact.html"
+        class="block text-center mt-10 py-4 rounded-xl bg-amber-500  text-white font-bold">
+
+        Get Quote
+
+    </a>
+
+</div>
+ 
+
+</div>
+
+<script>
+
+const menuBtn =
+document.getElementById("menuBtn");
+
+const mobileMenu =
+document.getElementById("mobileMenu");
+
+const closeMenu =
+document.getElementById("closeMenu");
+
+menuBtn.onclick = () => {
+
+mobileMenu.style.right = "0";
+
+}
+
+closeMenu.onclick = () => {
+
+mobileMenu.style.right = "-100%";
+
+}
+
+</script>
+
+<!-- BREADCRUMB -->
+
+
+<!-- PRODUCT HERO -->
+
+<section class="pt-40 pb-24 bg-[#020617]">
+
+ 
+<div class="max-w-7xl mx-auto px-6">
+
+    <div class="grid lg:grid-cols-2 gap-16 items-start">
+
+        <!-- LEFT -->
+
+        <div>
+
+            <div class="overflow-hidden rounded-[35px]">
+
+                <img src="/cart1.jpg"
+                    class="w-full h-[600px] object-cover">
+
+            </div>
+
+            <div class="grid grid-cols-4 gap-4 mt-4">
+
+                <img src="/cart1.jpg" class="rounded-2xl cursor-pointer">
+                <img src="/cart.jpg" class="rounded-2xl cursor-pointer">
+                <img src="/cart1.jpg" class="rounded-2xl cursor-pointer">
+                <img src="/cart.jpg" class="rounded-2xl cursor-pointer">
+
+            </div>
+
+        </div>
+
+        <!-- RIGHT -->
+
+        <div>
+
+            <span class="px-4 py-2 rounded-full bg-green-500/10 text-green-400 border border-green-500/20">
+                In Stock
+            </span>
+
+            <h1 class="text-5xl lg:text-7xl font-black text-white mt-6">
+                Premium Tea Cart
+            </h1>
+
+            <div class="flex items-center gap-3 mt-4">
+
+                <span class="text-amber-400 text-xl">
+                    ★★★★★
+                </span>
+
+                <span class="text-slate-400">
+                    127 Reviews
+                </span>
+
+            </div>
+
+            <div class="mt-8">
+
+                <span class="text-slate-500">
+                    Starting Price
+                </span>
+
+                <h2 class="text-6xl font-black text-amber-400">
+                    ₹49,999
+                </h2>
+
+            </div>
+
+            <p class="text-slate-400 mt-8 text-lg">
+
+                Premium stainless steel tea cart with
+                waterproof body, storage cabinet,
+                custom branding and LED lighting.
+
+            </p>
+
+            <div class="grid grid-cols-2 gap-4 mt-8">
+
+                <div class="bg-white/5 p-4 text-white rounded-xl">
+                    🛡️ Stainless Steel
+                </div>
+
+                <div class="bg-white/5 p-4 text-white rounded-xl">
+                    🎨 Custom Branding
+                </div>
+
+                <div class="bg-white/5 p-4 text-white rounded-xl">
+                    🚚 PAN India Delivery
+                </div>
+
+                <div class="bg-white/5 p-4 text-white rounded-xl">
+                    ⚡ Fast Manufacturing
+                </div>
+
+            </div>
+
+            <div class="grid grid-cols-2 gap-4 mt-10">
+
+                <a href="#enquiry"
+                    class="py-4 rounded-xl bg-amber-500  text-white text-center font-bold">
+
+                    Get Quote
+
+                </a>
+
+                <a href="https://wa.me/919999999999"
+                    class="py-4 rounded-xl bg-green-500 text-white text-center font-bold">
+
+                    WhatsApp
+
+                </a>
+
+            </div>
+
+            <div class="mt-10 bg-[#0F172A] border border-white/10 rounded-3xl p-6">
+
+                <ul class="space-y-3 text-slate-300">
+
+                    <li>✔ Manufacturing Time : 7-15 Days</li>
+                    <li>✔ Warranty Available</li>
+                    <li>✔ PAN India Delivery</li>
+                    <li>✔ Free Design Support</li>
+
+                </ul>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</div>
+ 
+
+</section>
+
+<!-- SPECIFICATIONS -->
+
+<section class="py-24 bg-[#0F172A]">
+
+ 
+<div class="max-w-6xl mx-auto px-6">
+
+    <h2 class="text-5xl font-black text-white text-center mb-16">
+        Specifications
+    </h2>
+
+    <div class="overflow-hidden rounded-3xl border border-white/10">
+
+        <table class="w-full">
+
+            <tr class="border-b border-white/10">
+                <td class="p-5 text-white">Material</td>
+                <td class="p-5 text-slate-400">Stainless Steel</td>
+            </tr>
+
+            <tr class="border-b border-white/10">
+                <td class="p-5 text-white">Length</td>
+                <td class="p-5 text-slate-400">6 Feet</td>
+            </tr>
+
+            <tr class="border-b border-white/10">
+                <td class="p-5 text-white">Width</td>
+                <td class="p-5 text-slate-400">3 Feet</td>
+            </tr>
+
+            <tr class="border-b border-white/10">
+                <td class="p-5 text-white">Branding</td>
+                <td class="p-5 text-slate-400">Available</td>
+            </tr>
+
+            <tr>
+                <td class="p-5 text-white">Warranty</td>
+                <td class="p-5 text-slate-400">1 Year</td>
+            </tr>
+
+        </table>
+
+    </div>
+
+</div>
+ 
+
+</section>
+
+<!-- ENQUIRY FORM -->
+
+<section id="enquiry" class="py-24 bg-[#020617]">
+
+ 
+<div class="max-w-4xl mx-auto px-6">
+
+    <div class="bg-[#0F172A] border border-white/10 rounded-[35px] p-10">
+
+        <h2 class="text-4xl font-black text-white text-center mb-10">
+            Request A Quote
+        </h2>
+
+        <div class="grid md:grid-cols-2 gap-5">
+
+            <input type="text" placeholder="Name"
+                class="bg-[#020617] border border-white/10 rounded-xl p-4">
+
+            <input type="tel" placeholder="Phone"
+                class="bg-[#020617] border border-white/10 rounded-xl p-4">
+
+        </div>
+
+        <textarea rows="5"
+            placeholder="Requirement"
+            class="w-full mt-5 bg-[#020617] border border-white/10 rounded-xl p-4"></textarea>
+
+        <button
+            class="w-full mt-5 py-4 rounded-xl bg-amber-500  text-white font-bold">
+
+            Submit Enquiry
+
+        </button>
+
+    </div>
+
+</div>
+ 
+
+</section>
+
+<!-- CTA -->
+
+<section class="py-20 bg-black text-center">
+
+    <h2 class="text-5xl font-bold text-white">
+        Ready To Start Your Food Business?
+    </h2>
+
+    <a href="#"
+        class="inline-block mt-8 bg-amber-500  text-white px-10 py-4 rounded-xl font-bold">
+
+        Request Quote
+
+    </a>
+
+</section>
+
+<!-- FLOATING WHATSAPP -->
+
+<section class="py-28 bg-[#020617]">
+
+    <div class="max-w-7xl mx-auto px-6">
+
+        <div class="text-center mb-16">
+
+            <span class="text-amber-400">
+                FOLLOW US
+            </span>
+
+            <h2 class="text-5xl font-black text-white mt-4">
+                Latest Instagram Reels
+            </h2>
+
+        </div>
+
+        <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+
+            <blockquote class="instagram-media"
+                data-instgrm-permalink="https://www.instagram.com/reel/DKOITriyUlO/">
+            </blockquote>
+
+            <blockquote class="instagram-media"
+                data-instgrm-permalink="https://www.instagram.com/reel/DXYm7yFkwTT/">
+            </blockquote>
+
+            <blockquote class="instagram-media"
+                data-instgrm-permalink="https://www.instagram.com/reel/DZct35NyoY6/">
+            </blockquote>
+
+        </div>
+
+    </div>
+
+</section>
+
+<script async src="//www.instagram.com/embed.js"></script>
+
+
+<!-- Footer -->
+<footer class="bg-black border-t border-white/10">
+
+    <div class="max-w-7xl mx-auto px-6 py-16">
+
+        <div class="grid md:grid-cols-4 gap-10">
+
+            <!-- About -->
+
+            <div>
+
+                <h3 class="text-3xl font-bold text-amber-400">
+                    FOOD CART
+                </h3>
+
+                <p class="text-slate-400 mt-4">
+                    Premium Food Cart, Food Truck & Kiosk Manufacturer
+                    with PAN India Delivery.
+                </p>
+
+            </div>
+
+            <!-- Links -->
+
+            <div>
+
+                <h4 class="text-white font-bold mb-5">
+                    Quick Links
+                </h4>
+
+                <ul class="space-y-3 text-slate-400">
+
+                    <li><a href="#">Home</a></li>
+                    <li><a href="#">Products</a></li>
+                    <li><a href="#">Gallery</a></li>
+                    <li><a href="#">Contact</a></li>
+
+                </ul>
+
+            </div>
+
+            <!-- Products -->
+
+            <div>
+
+                <h4 class="text-white font-bold mb-5">
+                    Products
+                </h4>
+
+                <ul class="space-y-3 text-slate-400">
+
+                    <li>Tea Cart</li>
+                    <li>Food Truck</li>
+                    <li>Juice Cart</li>
+                    <li>Kiosk Design</li>
+
+                </ul>
+
+            </div>
+
+            <!-- Contact -->
+
+            <div>
+
+                <h4 class="text-white font-bold mb-5">
+                    Contact
+                </h4>
+
+                <ul class="space-y-3 text-slate-400">
+
+                    <li>📞 +91 9876543210</li>
+                    <li>📧 info@yourdomain.com</li>
+                    <li>📍 India</li>
+
+                </ul>
+
+            </div>
+
+        </div>
+
+        <div class="border-t border-white/10 mt-12 pt-8 flex flex-col md:flex-row justify-between items-center">
+
+            <p class="text-slate-500">
+                © 2026 All Rights Reserved.
+            </p>
+
+            <p class="text-slate-500 mt-3 md:mt-0">
+                Developed By
+                <a href="https://nexahost.in"
+                   target="_blank"
+                   class="text-amber-400 hover:text-amber-300">
+                    NexaHost Technologies
+                </a>
+            </p>
+
+        </div>
+
+    </div>
+
+</footer>
+<a href="https://wa.me/919999999999"
+   target="_blank"
+   class="fixed bottom-6 mb-5 right-6 z-50 w-16 h-16 rounded-full bg-green-500 flex items-center justify-center shadow-2xl hover:scale-110 transition">
+
+    <i class='bx bxl-whatsapp text-white text-4xl'></i>
+
+</a>
+
+<button id="topBtn"
+    class="fixed bottom-28 right-6 z-50 w-14 h-14 rounded-full bg-amber-500  text-white text-xl shadow-xl hidden">
+
+    ↑
+
+</button>
+
+<script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
+
+<script>
+AOS.init({
+    duration:1000,
+    once:true
+});
+
+
+
+const preview = document.getElementById("cartPreview");
+
+document.querySelectorAll(".color-btn").forEach(btn => {
+
+    btn.addEventListener("click", () => {
+
+        const color =
+            getComputedStyle(btn).backgroundColor;
+
+        preview.style.filter =
+            `drop-shadow(0 0 40px ${color})`;
+
+    });
+
+});
+
+
+
+
+
+</script>
+
+<script>
+
+const topBtn =
+document.getElementById("topBtn");
+
+window.addEventListener("scroll",()=>{
+
+    if(window.scrollY > 300){
+
+        topBtn.classList.remove("hidden");
+
+    }else{
+
+        topBtn.classList.add("hidden");
+
+    }
+
+});
+
+topBtn.addEventListener("click",()=>{
+
+    window.scrollTo({
+        top:0,
+        behavior:"smooth"
+    });
+
+});
+
+</script>
+
+<script>
+
+const cards =
+document.querySelectorAll('.showcase-card');
+
+cards.forEach(card=>{
+
+card.addEventListener('mousemove',(e)=>{
+
+const rect=
+card.getBoundingClientRect();
+
+const x=
+e.clientX-rect.left;
+
+const y=
+e.clientY-rect.top;
+
+const rotateY=
+((x/rect.width)-0.5)*20;
+
+const rotateX=
+((y/rect.height)-0.5)*-20;
+
+card.style.transform=
+`rotateY(${rotateY}deg)
+ rotateX(${rotateX}deg)`;
+
+});
+
+card.addEventListener('mouseleave',()=>{
+
+card.style.transform='';
+
+});
+
+});
+
+</script>
+
+
+</body>
+</html>
