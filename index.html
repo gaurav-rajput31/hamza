@@ -262,7 +262,7 @@ animation:marquee 20s linear infinite;
 <!-- Navbar -->
 <!-- PREMIUM HEADER -->
 
-<header class="fixed top-0  left-0 w-full z-50">
+  <header class="fixed top-0  left-0 w-full z-50">
 
  
 <div class="max-w-7xl mx-auto px-6 pt-4">
@@ -301,7 +301,7 @@ animation:marquee 20s linear infinite;
             <ul class="hidden lg:flex items-center gap-8">
 
                 <li>
-                    <a href="/index.html" class="hover:text-amber-400 transition">
+                    <a href="/index.html" class="text-white hover:text-amber-400 transition">
                         Home
                     </a>
                 </li>
@@ -311,7 +311,7 @@ animation:marquee 20s linear infinite;
                 <li class="relative group">
 
                     <a href="/products.html"
-                        class="flex items-center gap-2 hover:text-amber-400">
+                        class="text-white hover:text-amber-400 transition">
 
                         Products
 
@@ -320,21 +320,21 @@ animation:marquee 20s linear infinite;
                     </a>
 
                     <div
-                        class="absolute top-full left-0 mt-4 w-72 bg-slate-900 border border-white/10 rounded-2xl p-4 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition">
+                        class="absolute top-full left-0 mt-1 w-72 bg-slate-900 border border-white/10 rounded-2xl p-4 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition">
 
-                        <a href="/product.html" class="block p-3 rounded-xl hover:bg-white/5">
+                        <a href="/product.html" class="block p-3 rounded-xl hover:bg-white/5 text-white hover:text-amber-400 transition">
                             🚚 Food Carts
                         </a>
 
-                        <a href="/product.html" class="block p-3 rounded-xl hover:bg-white/5">
+                        <a href="/product.html" class="block p-3 rounded-xl hover:bg-white/5 text-white hover:text-amber-400 transition">
                             ☕ Tea Carts
                         </a>
 
-                        <a href="/product.html" class="block p-3 rounded-xl hover:bg-white/5">
+                        <a href="/product.html" class="block p-3 rounded-xl hover:bg-white/5 text-white hover:text-amber-400 transition">
                             🍔 Fast Food Carts
                         </a>
 
-                        <a href="/product.html" class="block p-3 rounded-xl hover:bg-white/5">
+                        <a href="/product.html" class="block p-3 rounded-xl hover:bg-white/5 text-white hover:text-amber-400 transition">
                             🚐 Food Trucks
                         </a>
 
@@ -342,11 +342,11 @@ animation:marquee 20s linear infinite;
 
                 </li>
 
-                <li><a href="/gallery.html">Gallery</a></li>
+                <li><a href="/gallery.html" class="text-white hover:text-amber-400 transition">Gallery</a></li>
 
-                <li><a href="/about.html">About</a></li>
+                <li><a href="/about.html" class="text-white hover:text-amber-400 transition">About</a></li>
 
-                <li><a href="/contact.html">Contact</a></li>
+                <li><a href="/contact.html" class="text-white hover:text-amber-400 transition">Contact</a></li>
 
             </ul>
 
@@ -370,10 +370,11 @@ animation:marquee 20s linear infinite;
 
             </div>
 
+
             <!-- Mobile Toggle -->
 
             <button id="menuBtn"
-                class="lg:hidden text-3xl">
+                class="lg:hidden text-white  text-3xl">
 
                 ☰
 
@@ -398,11 +399,11 @@ animation:marquee 20s linear infinite;
 
     <div class="flex justify-between items-center mb-10">
 
-        <h3 class="text-2xl font-bold">
+        <h3 class="text-2xl text-white font-bold">
             Menu
         </h3>
 
-        <button id="closeMenu">
+        <button id="closeMenu" class="text-white text-3xl">
             ✕
         </button>
 
@@ -410,25 +411,25 @@ animation:marquee 20s linear infinite;
 
     <div class="space-y-6">
 
-        <a href="/index.html" class="block">
+        <a href="/index.html" class="block text-white hover:text-amber-400 transition">
             Home
         </a>
 
-        <a href="/products.html" class="block">
+        <a href="/products.html" class="block text-white hover:text-amber-400 transition">
             Products
         </a>
 
-        <a href="/gallery.html" class="block">
+        <a href="/gallery.html" class="block text-white hover:text-amber-400 transition">
             Gallery
         </a>
 
-        <a href="/about.html" class="block">
+        <a href="/about.html" class="block text-white hover:text-amber-400 transition">
             About
         </a>
 
         
 
-        <a href="/contact.html" class="block">
+        <a href="/contact.html" class="block text-white hover:text-amber-400 transition">
             Contact
         </a>
 
@@ -471,233 +472,225 @@ mobileMenu.style.right = "-100%";
 
 </script>
 
+
+
 <!-- PREMIUM HERO SECTION -->
+
+<!-- HERO SECTION -->
 
 <section class="relative mt-2 min-h-screen flex items-center overflow-hidden bg-[#020617]">
 
+    <!-- VIDEO -->
 
-<!-- VIDEO -->
-<video autoplay muted loop playsinline
-    class="absolute inset-0 w-full h-full object-cover">
-    <source src="bg.mp4" type="video/mp4">
-</video>
+    <video autoplay muted loop playsinline
+        class="absolute inset-0 w-full h-full object-cover">
 
-<!-- OVERLAY -->
-<div class="absolute inset-0 bg-black/75"></div>
+        <source src="bg.mp4" type="video/mp4">
 
-<!-- GLOW -->
-<div class="absolute left-0 top-0 w-[600px] h-[600px] bg-amber-500/20 blur-[180px] rounded-full"></div>
-<div class="absolute right-0 bottom-0 w-[600px] h-[600px] bg-orange-500/20 blur-[180px] rounded-full"></div>
+    </video>
 
-<div class="relative z-10 max-w-7xl mx-auto px-8 py-20">
+    <!-- DARK OVERLAY -->
 
-    <div class="bg-white/[0.03]
-                backdrop-blur-md
-                border border-white/10
-                rounded-[32px]
-                p-8 lg:p-12">
+    <div class="absolute inset-0 bg-black/80"></div>
 
-        <!-- Hero Content -->
+    <!-- GLOW EFFECTS -->
 
-    
+    <div class="absolute left-0 top-0 w-[400px] lg:w-[600px] h-[400px] lg:h-[600px] bg-amber-500/20 blur-[150px] rounded-full"></div>
 
+    <div class="absolute right-0 bottom-0 w-[400px] lg:w-[600px] h-[400px] lg:h-[600px] bg-orange-500/20 blur-[150px] rounded-full"></div>
 
+    <div class="relative z-10 max-w-7xl mx-auto px-6 py-24 lg:py-32">
 
-    <div class="grid lg:grid-cols-2 gap-20 items-center">
+        <div class="bg-white/[0.03] backdrop-blur-md border border-white/10 rounded-[30px] p-6 lg:p-12">
 
-        <!-- LEFT CONTENT -->
+            <div class="grid lg:grid-cols-2 gap-10 lg:gap-20 items-center">
 
-        <div>
-
-            <div class="inline-flex items-center gap-2 px-5 py-3 rounded-full border border-amber-500/20 bg-white/5 backdrop-blur-xl text-amber-400">
-                🚀 India's Trusted Food Cart Manufacturer
-            </div>
-
-            <h1 class="mt-8 text-6xl lg:text-8xl font-black leading-none text-white">
-
-                Build Your
-
-                <span class="block text-transparent bg-clip-text bg-gradient-to-r from-amber-400 via-yellow-300 to-orange-500">
-                    Dream Food
-                </span>
-
-                Business
-
-            </h1>
-
-            <p class="mt-8 text-lg text-slate-300 max-w-xl">
-
-                We design and manufacture
-
-                <span class="text-amber-400 font-semibold">Custom Food Carts</span>,
-                <span class="text-amber-400 font-semibold">Food Trucks</span>,
-                <span class="text-amber-400 font-semibold">Tea Stalls</span>
-                and
-                <span class="text-amber-400 font-semibold">Modern Kiosks</span>
-
-                across India.
-
-            </p>
-
-            <div class="flex flex-wrap gap-3 mt-8">
-
-                <span class="px-4 py-2 rounded-full bg-white/5 border border-white/10">
-                    Food Cart
-                </span>
-
-                <span class="px-4 py-2 rounded-full bg-white/5 border border-white/10">
-                    Food Truck
-                </span>
-
-                <span class="px-4 py-2 rounded-full bg-white/5 border border-white/10">
-                    Tea Stall
-                </span>
-
-                <span class="px-4 py-2 rounded-full bg-white/5 border border-white/10">
-                    Kiosk Design
-                </span>
-
-            </div>
-
-            <div class="flex gap-4 mt-10">
-
-                <a href="#"
-                    class="px-8 py-4 rounded-full bg-amber-500 text-white font-bold hover:scale-105 transition">
-                    Get Price List
-                </a>
-
-                <a href="#"
-                    class="px-8 py-4 rounded-full border border-white/10 bg-white/5 backdrop-blur-xl">
-                    View Designs
-                </a>
-
-            </div>
-
-            <!-- STATS -->
-
-            <div class="grid grid-cols-3 gap-4 mt-12">
-
-                <div class="bg-white/5 backdrop-blur-xl border border-white/10 rounded-2xl p-4 text-center">
-                    <h3 class="text-amber-400 text-3xl font-bold">1500+</h3>
-                    <p class="text-sm text-slate-400">Projects</p>
-                </div>
-
-                <div class="bg-white/5 backdrop-blur-xl border border-white/10 rounded-2xl p-4 text-center">
-                    <h3 class="text-amber-400 text-3xl font-bold">500+</h3>
-                    <p class="text-sm text-slate-400">Designs</p>
-                </div>
-
-                <div class="bg-white/5 backdrop-blur-xl border border-white/10 rounded-2xl p-4 text-center">
-                    <h3 class="text-amber-400 text-3xl font-bold">28+</h3>
-                    <p class="text-sm text-slate-400">States</p>
-                </div>
-
-            </div>
-
-        </div>
-
-        <!-- RIGHT -->
-
-        <div class="relative">
-
-            <!-- IMAGE CARD -->
-
-            <div class="relative p-4 rounded-[40px] bg-white/5 backdrop-blur-xl border border-white/10">
-
-                <img src="cart.jpg"
-                    class="w-full h-[650px] object-cover rounded-[30px]">
-
-            </div>
-
-            <!-- FLOATING BADGES -->
-
-            <div class="absolute top-10 -left-8 bg-amber-500 text-white px-5 py-3 rounded-2xl font-semibold shadow-2xl">
-                ⭐ Premium Quality
-            </div>
-
-            <div class="absolute top-1/2 -right-8 bg-white/10 backdrop-blur-xl border border-white/10 px-5 py-3 rounded-2xl">
-                🚚 PAN India Delivery
-            </div>
-
-            <div class="absolute bottom-24 -left-6 bg-white/10 backdrop-blur-xl border border-white/10 px-5 py-3 rounded-2xl">
-                🎨 Custom Branding
-            </div>
-
-            <div class="absolute bottom-8 right-8 bg-amber-500 text-white px-5 py-3 rounded-2xl font-semibold">
-                ⚡ Fast Manufacturing
-            </div>
-
-        </div>
-
-        </div>
-
-    </div>
-
-</div>
-
-
-</section>
-
-<!-- ANIMATED KEYWORDS SECTION -->
-
-<section class="py-20 bg-[#020617] overflow-hidden">
-
-    <div class="max-w-7xl mx-auto px-6">
-
-        <div
-            class="relative bg-white/5 border border-white/10 backdrop-blur-xl rounded-[40px] p-10 lg:p-16 overflow-hidden">
-
-            <!-- Glow -->
-
-            <div
-                class="absolute -top-20 -left-20 w-72 h-72 bg-amber-500/20 blur-[120px] rounded-full">
-            </div>
-
-            <div
-                class="absolute -bottom-20 -right-20 w-72 h-72 bg-orange-500/20 blur-[120px] rounded-full">
-            </div>
-
-            <div
-                class="relative z-10 flex flex-col lg:flex-row items-center justify-between gap-10">
-
-                <!-- Left -->
+                <!-- LEFT CONTENT -->
 
                 <div>
 
-                    <span
-                        class="inline-flex px-5 py-2 rounded-full bg-amber-500/10 border border-amber-500/20 text-amber-400">
+                    <div class="inline-flex items-center gap-2 px-4 py-2 rounded-full border border-amber-500/20 bg-white/5 text-amber-400 text-sm">
 
-                        PREMIUM MANUFACTURER
+                        🚀 India's Trusted Food Cart Manufacturer
 
-                    </span>
+                    </div>
 
-                    <h2
-                        class="text-4xl md:text-6xl lg:text-7xl font-black text-white mt-6 leading-tight">
+                    <h1 class="mt-8 text-4xl sm:text-5xl md:text-6xl lg:text-8xl font-black leading-[1.05] text-white">
 
-                        India's Leading
+                        Build Your
 
-                        <br>
+                        <span class="block text-transparent bg-clip-text bg-gradient-to-r from-amber-400 via-yellow-300 to-orange-500">
 
-                        <span class="animated-text"></span>
+                            Dream Food
 
-                    </h2>
+                        </span>
 
-                    <p class="text-slate-400 text-lg mt-6 max-w-xl">
+                        Business
 
-                        We manufacture custom food carts, tea stalls,
-                        food trucks, kiosks and complete business setups
-                        with premium quality and PAN India delivery.
+                    </h1>
+
+                    <p class="mt-6 lg:mt-8 text-base lg:text-lg text-slate-300 max-w-xl">
+
+                        We design and manufacture
+
+                        <span class="text-amber-400 font-semibold">
+                            Custom Food Carts
+                        </span>,
+
+                        <span class="text-amber-400 font-semibold">
+                            Food Trucks
+                        </span>,
+
+                        <span class="text-amber-400 font-semibold">
+                            Tea Stalls
+                        </span>
+
+                        and
+
+                        <span class="text-amber-400 font-semibold">
+                            Modern Kiosks
+                        </span>
+
+                        across India.
 
                     </p>
 
+                    <!-- TAGS -->
+
+                    <div class="flex flex-wrap gap-2 mt-8">
+
+                        <span class="px-3 py-2 text-sm rounded-full bg-white/5 border border-white/10">
+                            Food Cart
+                        </span>
+
+                        <span class="px-3 py-2 text-sm rounded-full bg-white/5 border border-white/10">
+                            Food Truck
+                        </span>
+
+                        <span class="px-3 py-2 text-sm rounded-full bg-white/5 border border-white/10">
+                            Tea Stall
+                        </span>
+
+                        <span class="px-3 py-2 text-sm rounded-full bg-white/5 border border-white/10">
+                            Kiosk Design
+                        </span>
+
+                    </div>
+
+                    <!-- BUTTONS -->
+
+                    <div class="flex flex-col sm:flex-row gap-4 mt-10">
+
+                        <a href="#"
+                            class="text-center px-8 py-4 rounded-full bg-amber-500 text-black font-bold hover:scale-105 duration-300">
+
+                            Get Price List
+
+                        </a>
+
+                        <a href="#"
+                            class="text-center px-8 py-4 rounded-full border border-white/10 bg-white/5 backdrop-blur-xl">
+
+                            View Designs
+
+                        </a>
+
+                    </div>
+
+                    <!-- STATS -->
+
+                    <div class="grid grid-cols-3 gap-3 lg:gap-4 mt-10">
+
+                        <div class="bg-white/5 backdrop-blur-xl border border-white/10 rounded-2xl p-4 text-center">
+
+                            <h3 class="text-2xl lg:text-3xl font-bold text-amber-400">
+                                1500+
+                            </h3>
+
+                            <p class="text-xs lg:text-sm text-slate-400">
+                                Projects
+                            </p>
+
+                        </div>
+
+                        <div class="bg-white/5 backdrop-blur-xl border border-white/10 rounded-2xl p-4 text-center">
+
+                            <h3 class="text-2xl lg:text-3xl font-bold text-amber-400">
+                                500+
+                            </h3>
+
+                            <p class="text-xs lg:text-sm text-slate-400">
+                                Designs
+                            </p>
+
+                        </div>
+
+                        <div class="bg-white/5 backdrop-blur-xl border border-white/10 rounded-2xl p-4 text-center">
+
+                            <h3 class="text-2xl lg:text-3xl font-bold text-amber-400">
+                                28+
+                            </h3>
+
+                            <p class="text-xs lg:text-sm text-slate-400">
+                                States
+                            </p>
+
+                        </div>
+
+                    </div>
+
                 </div>
 
-                <!-- Right Icon -->
+                <!-- RIGHT IMAGE -->
 
-                <div
-                    class="w-40 h-40 rounded-[35px] bg-gradient-to-br from-amber-400 to-orange-500 flex items-center justify-center shadow-[0_0_80px_rgba(245,158,11,.4)] animate-bounce">
+                <div class="relative">
 
-                    <i class='bx bx-store text-7xl text-white'></i>
+                    <div class="relative p-3 lg:p-4 rounded-[35px] bg-white/5 backdrop-blur-xl border border-white/10">
+
+                        <img src="cart.jpg"
+                            class="w-full h-[350px] sm:h-[450px] lg:h-[650px] object-cover rounded-[25px]">
+
+                    </div>
+
+                    <!-- DESKTOP FLOATING CARDS -->
+
+                    <div class="hidden lg:block absolute top-10 -left-8 bg-amber-500 text-black px-5 py-3 rounded-2xl font-semibold">
+                        ⭐ Premium Quality
+                    </div>
+
+                    <div class="hidden lg:block absolute top-1/2 -right-8 bg-white/10 backdrop-blur-xl border border-white/10 px-5 py-3 rounded-2xl">
+                        🚚 PAN India Delivery
+                    </div>
+
+                    <div class="hidden lg:block absolute bottom-24 -left-6 bg-white/10 backdrop-blur-xl border border-white/10 px-5 py-3 rounded-2xl">
+                        🎨 Custom Branding
+                    </div>
+
+                    <div class="hidden lg:block absolute bottom-8 right-8 bg-amber-500 text-black px-5 py-3 rounded-2xl font-semibold">
+                        ⚡ Fast Manufacturing
+                    </div>
+
+                    <!-- MOBILE CARDS -->
+
+                    <div class="grid grid-cols-2 gap-3 mt-4 lg:hidden">
+
+                        <div class="bg-white/5 border border-white/10 rounded-xl p-3 text-center">
+                            ⭐ Premium Quality
+                        </div>
+
+                        <div class="bg-white/5 border border-white/10 rounded-xl p-3 text-center">
+                            🚚 Delivery
+                        </div>
+
+                        <div class="bg-white/5 border border-white/10 rounded-xl p-3 text-center">
+                            🎨 Branding
+                        </div>
+
+                        <div class="bg-white/5 border border-white/10 rounded-xl p-3 text-center">
+                            ⚡ Fast Build
+                        </div>
+
+                    </div>
 
                 </div>
 
@@ -706,18 +699,101 @@ mobileMenu.style.right = "-100%";
         </div>
 
     </div>
+
+</section>
+<!-- ANIMATED KEYWORDS SECTION -->
+
+<section class="py-16 lg:py-24 bg-[#020617] overflow-hidden">
+
+<div class="max-w-7xl mx-auto px-4 sm:px-6">
+
+<div
+class="relative bg-white/5 border border-white/10 backdrop-blur-xl rounded-[25px] lg:rounded-[40px] p-6 sm:p-8 lg:p-16 overflow-hidden">
+
+<!-- Glow -->
+
+<div
+class="absolute -top-20 -left-20 w-56 lg:w-72 h-56 lg:h-72 bg-amber-500/20 blur-[120px] rounded-full">
+</div>
+
+<div
+class="absolute -bottom-20 -right-20 w-56 lg:w-72 h-56 lg:h-72 bg-orange-500/20 blur-[120px] rounded-full">
+</div>
+
+<div
+class="relative z-10 flex flex-col lg:flex-row items-center justify-between gap-10">
+
+<!-- Left -->
+
+<div class="text-center lg:text-left">
+
+<span
+class="inline-flex px-4 py-2 rounded-full bg-amber-500/10 border border-amber-500/20 text-amber-400 text-sm">
+
+PREMIUM MANUFACTURER
+
+</span>
+
+<h2
+class="text-3xl sm:text-5xl lg:text-7xl font-black text-white mt-6 leading-tight">
+
+India's Leading
+
+<br>
+
+<span class="animated-text"></span>
+
+</h2>
+
+<p
+class="text-slate-400 text-base lg:text-lg mt-6 max-w-xl mx-auto lg:mx-0">
+
+We manufacture custom food carts,
+tea stalls, food trucks, kiosks and
+complete business setups with premium quality.
+
+</p>
+
+</div>
+
+<!-- Right -->
+
+<div
+class="w-28 h-28 sm:w-36 sm:h-36 lg:w-44 lg:h-44 rounded-[25px] lg:rounded-[35px]
+bg-gradient-to-br from-amber-400 to-orange-500
+flex items-center justify-center
+shadow-[0_0_60px_rgba(245,158,11,.35)]">
+
+
+<i class='bx bxs-truck text-7xl text-white'></i>
+
+
+</div>
+
+</div>
+
+</div>
+
+</div>
 
 </section>
 
 <style>
 
+
+
 .animated-text{
     color:#f59e0b;
     position:relative;
     display:inline-block;
-    min-width:420px;
+    min-width:auto;
 }
 
+@media(min-width:1024px){
+    .animated-text{
+        min-width:420px;
+    }
+}
 .animated-text::after{
     content:'';
     animation:keywordSlider 15s infinite;
@@ -786,25 +862,26 @@ mobileMenu.style.right = "-100%";
 
     <div class="max-w-7xl mx-auto px-6">
 
-        <div class="text-center mb-20">
+        <div class="text-center mb-14 lg:mb-20">
 
             <span
-                class="px-5 py-2 rounded-full bg-amber-500/10 border border-amber-500/20 text-amber-400">
+            class="px-5 py-2 rounded-full bg-amber-500/10 border border-amber-500/20 text-amber-400 text-sm">
 
                 OUR COLLECTION
 
             </span>
 
-            <h2 class="text-5xl lg:text-7xl font-black text-white mt-6">
+            <h2 class="text-4xl md:text-5xl lg:text-7xl font-black text-white mt-6">
 
                 3D Food Cart
+
                 <span class="text-amber-400">
                     Showcase
                 </span>
 
             </h2>
 
-            <p class="text-slate-400 max-w-2xl mx-auto mt-6">
+            <p class="text-slate-400 max-w-2xl mx-auto mt-6 px-2">
 
                 Explore our premium collection of custom food carts,
                 kiosks and food trucks designed for every business idea.
@@ -864,137 +941,263 @@ mobileMenu.style.right = "-100%";
 
 </section>
 
+<style>
+    .showcase-wrapper{
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    gap:30px;
+    perspective:2000px;
+    flex-wrap:wrap;
+}
+
+.showcase-card{
+    position:relative;
+    width:100%;
+    max-width:320px;
+    height:420px;
+    border-radius:30px;
+    overflow:hidden;
+    transition:.6s;
+    cursor:pointer;
+    border:1px solid rgba(255,255,255,.08);
+}
+
+.showcase-card img{
+    width:100%;
+    height:100%;
+    object-fit:cover;
+    transition:1s;
+}
+
+.showcase-card:hover img{
+    transform:scale(1.08);
+}
+
+.active-card{
+    max-width:420px;
+    height:560px;
+    transform:translateZ(120px);
+    box-shadow:0 30px 80px rgba(245,158,11,.25);
+}
+
+.side-card:first-child{
+    transform:rotateY(20deg) scale(.92);
+    opacity:.8;
+}
+
+.side-card:last-child{
+    transform:rotateY(-20deg) scale(.92);
+    opacity:.8;
+}
+
+.card-content{
+    position:absolute;
+    left:0;
+    bottom:0;
+    width:100%;
+    padding:30px;
+    z-index:5;
+    background:linear-gradient(
+        to top,
+        rgba(0,0,0,.98) 5%,
+        rgba(0,0,0,.65) 45%,
+        transparent 100%
+    );
+}
+
+.card-content h3{
+    color:#fff;
+    font-size:28px;
+    font-weight:800;
+}
+
+.card-content p{
+    color:#cbd5e1;
+    margin-top:8px;
+}
+
+.glow{
+    position:absolute;
+    inset:0;
+    background:radial-gradient(
+        circle,
+        rgba(245,158,11,.22),
+        transparent 70%
+    );
+    z-index:1;
+}
+
+/* Mobile */
+
+@media(max-width:1024px){
+
+    .showcase-wrapper{
+        flex-direction:column;
+        perspective:none;
+    }
+
+    .side-card,
+    .active-card{
+        transform:none !important;
+        opacity:1;
+        max-width:100%;
+        width:100%;
+        height:420px;
+    }
+
+}
+
+@media(max-width:640px){
+
+    .showcase-card{
+        height:350px;
+        border-radius:24px;
+    }
+
+    .active-card{
+        height:400px;
+    }
+
+    .card-content{
+        padding:20px;
+    }
+
+    .card-content h3{
+        font-size:22px;
+    }
+
+}
+</style>
+
 
 
 
 
 <!-- TRUST FEATURES -->
 
-<section class="relative -mt-16 z-20">
+<section class="relative -mt-8 lg:-mt-16 z-20">
 
- 
-<div class="max-w-7xl mx-auto px-6 animate-marquee">
-
-    <div
-        class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-5">
-
-        <!-- Card -->
+    <div class="max-w-7xl mx-auto px-4 sm:px-6">
 
         <div
-            class="group bg-white rounded-[30px] p-6 text-center shadow-xl hover:-translate-y-3 hover:shadow-2xl transition-all duration-500">
+            class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-4 lg:gap-5">
+
+            <!-- Card 1 -->
 
             <div
-                class="w-20 h-20 mx-auto rounded-3xl bg-gradient-to-br from-amber-400 to-yellow-600 flex items-center justify-center text-4xl text-white group-hover:rotate-12 transition">
+                class="group bg-white rounded-2xl lg:rounded-[30px] p-4 lg:p-6 text-center shadow-xl hover:-translate-y-2 lg:hover:-translate-y-3 hover:shadow-2xl transition-all duration-500">
 
-                🏪
+                <div
+                    class="w-14 h-14 sm:w-16 sm:h-16 lg:w-20 lg:h-20 mx-auto rounded-2xl lg:rounded-3xl bg-gradient-to-br from-amber-400 to-yellow-600 flex items-center justify-center text-2xl lg:text-4xl text-white group-hover:rotate-12 transition">
+
+                    🏪
+
+                </div>
+
+                <h4 class="font-bold text-slate-900 mt-4 text-sm lg:text-base">
+                    Strong & Durable
+                </h4>
 
             </div>
 
-            <h4 class="font-bold text-slate-900 mt-5">
-                Strong & Durable
-            </h4>
-
-        </div>
-
-        <!-- Card -->
-
-        <div
-            class="group bg-white rounded-[30px] p-6 text-center shadow-xl hover:-translate-y-3 hover:shadow-2xl transition-all duration-500">
+            <!-- Card 2 -->
 
             <div
-                class="w-20 h-20 mx-auto rounded-3xl bg-gradient-to-br from-amber-400 to-yellow-600 flex items-center justify-center text-4xl text-white group-hover:rotate-12 transition">
+                class="group bg-white rounded-2xl lg:rounded-[30px] p-4 lg:p-6 text-center shadow-xl hover:-translate-y-2 lg:hover:-translate-y-3 hover:shadow-2xl transition-all duration-500">
 
-                🔧
+                <div
+                    class="w-14 h-14 sm:w-16 sm:h-16 lg:w-20 lg:h-20 mx-auto rounded-2xl lg:rounded-3xl bg-gradient-to-br from-amber-400 to-yellow-600 flex items-center justify-center text-2xl lg:text-4xl text-white group-hover:rotate-12 transition">
+
+                    🔧
+
+                </div>
+
+                <h4 class="font-bold text-slate-900 mt-4 text-sm lg:text-base">
+                    Ready Setup
+                </h4>
 
             </div>
 
-            <h4 class="font-bold text-slate-900 mt-5">
-                Ready Setup
-            </h4>
-
-        </div>
-
-        <!-- Card -->
-
-        <div
-            class="group bg-white rounded-[30px] p-6 text-center shadow-xl hover:-translate-y-3 hover:shadow-2xl transition-all duration-500">
+            <!-- Card 3 -->
 
             <div
-                class="w-20 h-20 mx-auto rounded-3xl bg-gradient-to-br from-amber-400 to-yellow-600 flex items-center justify-center text-4xl text-white group-hover:rotate-12 transition">
+                class="group bg-white rounded-2xl lg:rounded-[30px] p-4 lg:p-6 text-center shadow-xl hover:-translate-y-2 lg:hover:-translate-y-3 hover:shadow-2xl transition-all duration-500">
 
-                🎨
+                <div
+                    class="w-14 h-14 sm:w-16 sm:h-16 lg:w-20 lg:h-20 mx-auto rounded-2xl lg:rounded-3xl bg-gradient-to-br from-amber-400 to-yellow-600 flex items-center justify-center text-2xl lg:text-4xl text-white group-hover:rotate-12 transition">
+
+                    🎨
+
+                </div>
+
+                <h4 class="font-bold text-slate-900 mt-4 text-sm lg:text-base">
+                    Custom Design
+                </h4>
 
             </div>
 
-            <h4 class="font-bold text-slate-900 mt-5">
-                Custom Design
-            </h4>
-
-        </div>
-
-        <!-- Card -->
-
-        <div
-            class="group bg-white rounded-[30px] p-6 text-center shadow-xl hover:-translate-y-3 hover:shadow-2xl transition-all duration-500">
+            <!-- Card 4 -->
 
             <div
-                class="w-20 h-20 mx-auto rounded-3xl bg-gradient-to-br from-amber-400 to-yellow-600 flex items-center justify-center text-4xl text-white group-hover:rotate-12 transition">
+                class="group bg-white rounded-2xl lg:rounded-[30px] p-4 lg:p-6 text-center shadow-xl hover:-translate-y-2 lg:hover:-translate-y-3 hover:shadow-2xl transition-all duration-500">
 
-                🚚
+                <div
+                    class="w-14 h-14 sm:w-16 sm:h-16 lg:w-20 lg:h-20 mx-auto rounded-2xl lg:rounded-3xl bg-gradient-to-br from-amber-400 to-yellow-600 flex items-center justify-center text-2xl lg:text-4xl text-white group-hover:rotate-12 transition">
+
+                    🚚
+
+                </div>
+
+                <h4 class="font-bold text-slate-900 mt-4 text-sm lg:text-base">
+                    PAN India
+                </h4>
 
             </div>
 
-            <h4 class="font-bold text-slate-900 mt-5">
-                PAN India
-            </h4>
-
-        </div>
-
-        <!-- Card -->
-
-        <div
-            class="group bg-white rounded-[30px] p-6 text-center shadow-xl hover:-translate-y-3 hover:shadow-2xl transition-all duration-500">
+            <!-- Card 5 -->
 
             <div
-                class="w-20 h-20 mx-auto rounded-3xl bg-gradient-to-br from-amber-400 to-yellow-600 flex items-center justify-center text-4xl text-white group-hover:rotate-12 transition">
+                class="group bg-white rounded-2xl lg:rounded-[30px] p-4 lg:p-6 text-center shadow-xl hover:-translate-y-2 lg:hover:-translate-y-3 hover:shadow-2xl transition-all duration-500">
 
-                ₹
+                <div
+                    class="w-14 h-14 sm:w-16 sm:h-16 lg:w-20 lg:h-20 mx-auto rounded-2xl lg:rounded-3xl bg-gradient-to-br from-amber-400 to-yellow-600 flex items-center justify-center text-2xl lg:text-4xl text-white group-hover:rotate-12 transition">
+
+                    ₹
+
+                </div>
+
+                <h4 class="font-bold text-slate-900 mt-4 text-sm lg:text-base">
+                    Best Pricing
+                </h4>
 
             </div>
 
-            <h4 class="font-bold text-slate-900 mt-5">
-                Best Pricing
-            </h4>
-
-        </div>
-
-        <!-- Card -->
-
-        <div
-            class="group bg-white rounded-[30px] p-6 text-center shadow-xl hover:-translate-y-3 hover:shadow-2xl transition-all duration-500">
+            <!-- Card 6 -->
 
             <div
-                class="w-20 h-20 mx-auto rounded-3xl bg-gradient-to-br from-amber-400 to-yellow-600 flex items-center justify-center text-4xl text-white group-hover:rotate-12 transition">
+                class="group bg-white rounded-2xl lg:rounded-[30px] p-4 lg:p-6 text-center shadow-xl hover:-translate-y-2 lg:hover:-translate-y-3 hover:shadow-2xl transition-all duration-500">
 
-                🎧
+                <div
+                    class="w-14 h-14 sm:w-16 sm:h-16 lg:w-20 lg:h-20 mx-auto rounded-2xl lg:rounded-3xl bg-gradient-to-br from-amber-400 to-yellow-600 flex items-center justify-center text-2xl lg:text-4xl text-white group-hover:rotate-12 transition">
+
+                    🎧
+
+                </div>
+
+                <h4 class="font-bold text-slate-900 mt-4 text-sm lg:text-base">
+                    24/7 Support
+                </h4>
 
             </div>
-
-            <h4 class="font-bold text-slate-900 mt-5">
-                24/7 Support
-            </h4>
 
         </div>
 
     </div>
 
-</div>
- 
-
 </section>
 
-
-<section class="py-28 bg-[#020617]">
+<section class="py-20 bg-[#020617]">
 
     <div class="max-w-7xl mx-auto px-6">
 
@@ -1191,29 +1394,29 @@ mobileMenu.style.right = "-100%";
 </section>
 
 
-<section class="py-32 bg-[#020617] relative overflow-hidden">
+<section class="py-16 lg:py-24 bg-[#020617] relative overflow-hidden">
 
     <!-- Glow -->
 
-    <div class="absolute left-0 top-0 w-[500px] h-[500px] bg-amber-500/10 blur-[180px] rounded-full"></div>
+    <div class="absolute left-0 top-0 w-[300px] lg:w-[500px] h-[300px] lg:h-[500px] bg-amber-500/10 blur-[180px] rounded-full"></div>
 
-    <div class="max-w-7xl mx-auto px-6">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6">
 
-        <div class="grid lg:grid-cols-2 gap-20 items-center">
+        <div class="grid lg:grid-cols-2 gap-12 lg:gap-20 items-start">
 
             <!-- LEFT -->
 
-            <div class="sticky top-32">
+            <div class="lg:sticky lg:top-32">
 
                 <span
-                    class="px-5 py-2 rounded-full bg-amber-500/10 border border-amber-500/20 text-amber-400">
+                    class="inline-flex px-4 py-2 rounded-full bg-amber-500/10 border border-amber-500/20 text-amber-400 text-sm">
 
                     BUSINESS JOURNEY
 
                 </span>
 
                 <h2
-                    class="text-6xl lg:text-8xl font-black text-white mt-8 leading-none">
+                    class="text-4xl sm:text-5xl md:text-6xl lg:text-8xl font-black text-white mt-6 lg:mt-8 leading-[1.1]">
 
                     Dream.
                     <br>
@@ -1225,7 +1428,8 @@ mobileMenu.style.right = "-100%";
 
                 </h2>
 
-                <p class="text-slate-400 mt-8 text-xl">
+                <p
+                    class="text-slate-400 mt-6 lg:mt-8 text-base lg:text-xl max-w-xl">
 
                     We transform your food business idea
                     into a fully branded and profitable setup.
@@ -1234,91 +1438,117 @@ mobileMenu.style.right = "-100%";
 
             </div>
 
-            <!-- RIGHT -->
+            <!-- RIGHT TIMELINE -->
 
             <div class="relative">
 
                 <!-- Line -->
 
                 <div
-                    class="absolute left-8 top-0 w-1 h-full bg-gradient-to-b from-amber-500 to-transparent">
+                    class="absolute left-5 sm:left-8 top-0 w-[3px] h-full bg-gradient-to-b from-amber-500 via-amber-400 to-transparent">
                 </div>
 
-                <!-- Step -->
+                <!-- STEP 1 -->
 
-                <div class="relative pl-24 mb-20">
+                <div class="relative pl-16 sm:pl-24 pb-12 lg:pb-20">
 
                     <div
-                        class="absolute left-0 w-16 h-16 rounded-full bg-amber-500 text-white flex items-center justify-center font-bold">
+                        class="absolute left-0 w-10 h-10 sm:w-16 sm:h-16 rounded-full bg-amber-500 text-black flex items-center justify-center font-bold text-sm sm:text-base shadow-lg">
 
                         01
 
                     </div>
 
-                    <h3 class="text-white text-3xl font-bold">
-                        Share Your Idea
-                    </h3>
+                    <div
+                        class="bg-white/5 border border-white/10 rounded-2xl lg:rounded-3xl p-5 lg:p-8 hover:border-amber-500/30 transition">
 
-                    <p class="text-slate-400 mt-3">
-                        Tell us your vision and requirements.
-                    </p>
+                        <h3 class="text-white text-xl lg:text-3xl font-bold">
+                            Share Your Idea
+                        </h3>
+
+                        <p class="text-slate-400 mt-3">
+                            Tell us your vision, food concept and business requirements.
+                        </p>
+
+                    </div>
 
                 </div>
 
-                <div class="relative pl-24 mb-20">
+                <!-- STEP 2 -->
+
+                <div class="relative pl-16 sm:pl-24 pb-12 lg:pb-20">
 
                     <div
-                        class="absolute left-0 w-16 h-16 rounded-full bg-amber-500 text-white flex items-center justify-center font-bold">
+                        class="absolute left-0 w-10 h-10 sm:w-16 sm:h-16 rounded-full bg-amber-500 text-black flex items-center justify-center font-bold text-sm sm:text-base shadow-lg">
 
                         02
 
                     </div>
 
-                    <h3 class="text-white text-3xl font-bold">
-                        Design & Planning
-                    </h3>
+                    <div
+                        class="bg-white/5 border border-white/10 rounded-2xl lg:rounded-3xl p-5 lg:p-8 hover:border-amber-500/30 transition">
 
-                    <p class="text-slate-400 mt-3">
-                        Custom layout and branding concepts.
-                    </p>
+                        <h3 class="text-white text-xl lg:text-3xl font-bold">
+                            Design & Planning
+                        </h3>
+
+                        <p class="text-slate-400 mt-3">
+                            Custom layouts, branding concepts and business planning.
+                        </p>
+
+                    </div>
 
                 </div>
 
-                <div class="relative pl-24 mb-20">
+                <!-- STEP 3 -->
+
+                <div class="relative pl-16 sm:pl-24 pb-12 lg:pb-20">
 
                     <div
-                        class="absolute left-0 w-16 h-16 rounded-full bg-amber-500 text-white flex items-center justify-center font-bold">
+                        class="absolute left-0 w-10 h-10 sm:w-16 sm:h-16 rounded-full bg-amber-500 text-black flex items-center justify-center font-bold text-sm sm:text-base shadow-lg">
 
                         03
 
                     </div>
 
-                    <h3 class="text-white text-3xl font-bold">
-                        Manufacturing
-                    </h3>
+                    <div
+                        class="bg-white/5 border border-white/10 rounded-2xl lg:rounded-3xl p-5 lg:p-8 hover:border-amber-500/30 transition">
 
-                    <p class="text-slate-400 mt-3">
-                        Premium fabrication and finishing.
-                    </p>
+                        <h3 class="text-white text-xl lg:text-3xl font-bold">
+                            Manufacturing
+                        </h3>
+
+                        <p class="text-slate-400 mt-3">
+                            Premium fabrication, branding and quality finishing.
+                        </p>
+
+                    </div>
 
                 </div>
 
-                <div class="relative pl-24">
+                <!-- STEP 4 -->
+
+                <div class="relative pl-16 sm:pl-24">
 
                     <div
-                        class="absolute left-0 w-16 h-16 rounded-full bg-amber-500 text-white flex items-center justify-center font-bold">
+                        class="absolute left-0 w-10 h-10 sm:w-16 sm:h-16 rounded-full bg-gradient-to-r from-amber-400 to-orange-500 text-black flex items-center justify-center font-bold text-sm sm:text-base shadow-lg">
 
                         04
 
                     </div>
 
-                    <h3 class="text-white text-3xl font-bold">
-                        Launch Business
-                    </h3>
+                    <div
+                        class="bg-gradient-to-br from-amber-500/10 to-orange-500/10 border border-amber-500/20 rounded-2xl lg:rounded-3xl p-5 lg:p-8">
 
-                    <p class="text-slate-400 mt-3">
-                        Start serving customers and earning.
-                    </p>
+                        <h3 class="text-white text-xl lg:text-3xl font-bold">
+                            Launch Business
+                        </h3>
+
+                        <p class="text-slate-300 mt-3">
+                            Start serving customers and generating revenue with confidence.
+                        </p>
+
+                    </div>
 
                 </div>
 
@@ -1329,7 +1559,6 @@ mobileMenu.style.right = "-100%";
     </div>
 
 </section>
-
 
 
 <!-- Stats -->
@@ -1530,7 +1759,7 @@ mobileMenu.style.right = "-100%";
 
 <!-- WHY CHOOSE US -->
 
-<section class="py-28 bg-[#020617] relative overflow-hidden">
+<section class="py-20 bg-[#020617] relative overflow-hidden">
 
 
 <div class="absolute top-0 left-0 w-96 h-96 bg-amber-500/10 blur-[150px] rounded-full"></div>
@@ -1682,7 +1911,7 @@ mobileMenu.style.right = "-100%";
 
 <!-- MANUFACTURING PROCESS -->
 
-<section class="py-28 bg-[#020617] relative overflow-hidden">
+<section class="py-20 bg-[#020617] relative overflow-hidden">
 
  
 <div class="max-w-7xl mx-auto px-6">
@@ -2425,7 +2654,7 @@ mobileMenu.style.right = "-100%";
                         Scan QR To Chat On WhatsApp
                     </h4>
 
-                    <img src="/qr.png"
+                    <img src="/qr-card (1).png"
                         class="w-40 rounded-2xl border border-white/10">
 
                 </div>
